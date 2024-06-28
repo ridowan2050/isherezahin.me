@@ -29,9 +29,9 @@
   --color-default: white;
   --text-gray: #999;
   --text-default: #e0e0e0;
-  --color-primary: #07a077;
+  --color-primary: #00E6A5;
   --color-secondary: #303133;
-  --color-bg: black;
+  --color-bg: #0E1111;
   --color-danger: red;
 }
 
@@ -1360,15 +1360,20 @@ h1.title {
   color: var(--text-default);
 }
 
-.footer .credits {
-  padding-top: 6px;
-  text-align: center;
-  font-size: 13px;
+.credits {
   color: var(--text-default);
+  margin-top: 20px;
+  text-align: center;
 }
 
-.footer .credits a {
-  color: var(--color-primary);
+.credits a {
+  color: #00aff0; /* Skype blue color */  
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.credits a:hover {
+  text-decoration: underline;
 }
 
 .footer .social-links {

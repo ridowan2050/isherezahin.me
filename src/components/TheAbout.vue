@@ -20,10 +20,18 @@
       <li class="text-gray-400">Analytics: <a class="tech-color" target="_blank" rel="noopener noreferrer" href="#">Internet</a></li>
       <li class="text-gray-400">Styling: <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://css.com">CSS</a></li>
     </ul>
+    <p class="mb-5">
+        Special thanks to 
+        <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://honghong.me/">Hong</a>, 
+        <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://theodorusclarence.com/">Theodorus</a>, and 
+        <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://portfolionext-js.netlify.app/">Sanidhya</a> 
+        for their inspiring portfolio designs. Their work greatly influenced my own creation. While I made significant customizations, 
+        their designs were a fantastic starting point.
+    </p>
 
-    <h4 id="who-am-i" class="scroll-m-32 text-white text-decoration-none">Inspiration</h4>
-    <p>Here are some websites that inspired me a lot to build a fantastic website.</p>
-    <p>Refer to <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com/isherezahin/">README</a></p>
+    <h4 id="who-am-i" class="scroll-m-32 text-white">Inspiration</h4>
+    <p>These websites inspired me significantly in building my own fantastic website:</p>
+    <p>Refer to my <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com/isherezahin/">README</a> for more details.</p>
 
     <h4 id="who-am-i" class="scroll-m-32 text-white text-decoration-none">Social links</h4>
     <ul>
@@ -53,6 +61,8 @@
         <div class="tooltip"><span class="tech-name">Vue.js:</span> A progressive framework for building user interfaces.</div>
       </div>
     </div>
+    <h4 id="who-am-i" class="scroll-m-32 text-white text-decoration-none" style="margin-bottom: 4px;">Contact</h4>
+    <p>Do contact me if you need my opinion about software testing, web development, especially frontend works. <br>I’ll be happy to help! (find my Skype ID in the footer)</p>
   </div>
 </template>
 

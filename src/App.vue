@@ -37,9 +37,9 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="container">
-            <!-- <div class="copyright">
-                &copy; Copyright <strong><span>BootstrapMade</span></strong>. All Rights Reserved
-            </div> -->
+            <div class="copyright">
+                &copy; Copyright <strong><span>ZAHIN</span></strong> 2024 • Got any feedback?
+            </div>
             <div class="social-links d-flex justify-content-center">
                 <a href="https://www.github.com/IsHereZahin/" target="_blank"><i class="bi bi-github"></i></a>
                 <a href="https://www.linkedin.com/in/isherezahin/" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -50,7 +50,10 @@
                 Deployed by <a href="https://www.linkedin.com/in/isherezahin/" target="blank">Zahin</a>
             </div> -->
             <div class="credits">
-                © 2024 <a href="https://www.linkedin.com/in/isherezahin/" target="blank">Zahin</a>
+                For inquiries, contact me on 
+                <a href="https://join.skype.com/invite/xeu3lGYMM8So" target="_blank" rel="noopener noreferrer">
+                    Skype
+                </a>
             </div>
         </div>
     </footer>
@@ -84,4 +87,5 @@ import '../public/assets/js/main.js';
     color: var(--color-primary); /* Example active link color */
     font-weight: bold; /* Example active link font weight */
 }
+
 </style>
