@@ -50,14 +50,14 @@
 
   <!-- Main content -->
   <main id="main">
-    <TheWelcome />
+    <AboutME />
     <TestimonialsData />
     <TheSkill />
   </main>
 </template>
 
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue';
+import AboutME from '../components/home/AboutMe.vue';
 import TheSkill from '../components/TheSkill.vue';
 import TestimonialsData from '../components/TestimonialsData.vue';
 </script>
