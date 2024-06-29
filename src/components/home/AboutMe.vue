@@ -1,6 +1,6 @@
 <template>
   <section class="about">
-    <h1 class="text-center">About Me</h1>
+    <h1 class="headline">About Me</h1>
     <div class="row" style="border-top: 1px solid rgb(36, 36, 36);">
       <div class="col-md-6">
         <div class="location">
@@ -727,10 +727,6 @@ export default {
   margin-bottom: -60px;
 }
 
-h1 {
-  color: var(--color-default);
-  margin-bottom: 30px;
-}
 
 .row {
   padding: 20px;
@@ -833,7 +829,7 @@ svg {
 
 .hours {
   font-size: 40px;
-  padding: 35px;
+  padding: 25px;
   font-weight: 600;
   color: var(--color-default);
 }
@@ -861,7 +857,7 @@ svg {
 .icon-marquee {
   width: 100%;
   overflow: hidden;
-  background-color: var(--color-bg);
+  background-color: transparent;
   padding: 20px;
 }
 

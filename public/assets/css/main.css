@@ -70,6 +70,11 @@ h6 {
   font-family: var(--font-primary);
 }
 
+.headline {
+  text-align: center;
+  color: var(--color-default);
+  margin: 30px;
+}
 /*--------------------------------------------------------------
 # Custom Button
 --------------------------------------------------------------*/

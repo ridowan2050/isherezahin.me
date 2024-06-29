@@ -57,11 +57,13 @@
   <!-- Main content -->
   <main id="main">
     <AboutMe />
+    <MentalModel />
   </main>
 </template>
 
 <script setup lang="ts">
 import AboutMe from '../components/home/AboutMe.vue';
+import MentalModel from '../components/home/MentalModel.vue';
 </script>
 
 <style scoped>
