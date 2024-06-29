@@ -36,7 +36,7 @@
       </div>
     </div>
   </section>
-  <section class="tools about">
+  <section class="tools">
     <div class="row">
       <div class="borderli col-lg-6">
         <div class="stacks">
@@ -45,20 +45,22 @@
             </svg>
             Languages and Tools
         </div>
+
         <div class="icon-marquee">
-    <div class="marquee-container" ref="marqueeContainer">
-      <div class="icon-wrapper" :style="{ transform: `translateX(${offset}px)` }">
-        <img
-          v-for="(icon, index) in icons"
-          :key="index"
-          :src="icon.url"
-          :alt="icon.alt"
-          class="size-10 icon"
-        />
+          <div class="flex flex-col overflow-hidden p-4">
+            <!-- Left Marquee Container -->
+            <div class="flex justify-around gap-3 mb-3 first-marquee-container move-left-to-right">
+              <img v-for="(icon, index) in firstMarqueeIcons" :key="index" :src="icon.src" :alt="icon.alt" class="size-10 icon">
+            </div>
+
+            <!-- Right Marquee Container -->
+            <div class="flex justify-around gap-3 second-marquee-container move-right-to-left">
+              <img v-for="(icon, index) in secondMarqueeIcons" :key="'second-' + index" :src="icon.src" :alt="icon.alt" class="size-10 icon">
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
-    </div>
       <div class="col-lg-6">
         <div class="row">
           <div class="col-sm-6">
@@ -97,7 +99,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="button-container">
+      <div class="custom-btn">
         <RouterLink to="/about" class="custom-button">Know more about me</RouterLink>
       </div>
     </div>
@@ -106,69 +108,620 @@
 
 <script>
 export default {
+  name: "IconMarquee",
   data() {
     return {
-      icons: [
-        { url: 'https://skillicons.dev/icons?i=html5', alt: 'HTML5 Icon' },
-        { url: 'https://skillicons.dev/icons?i=css3', alt: 'CSS3 Icon' },
-        { url: 'https://skillicons.dev/icons?i=bootstrap', alt: 'Bootstrap Icon' },
-        { url: 'https://skillicons.dev/icons?i=tailwindcss', alt: 'Tailwind CSS Icon' },
-        { url: 'https://skillicons.dev/icons?i=javascript', alt: 'JavaScript Icon' },
-        { url: 'https://skillicons.dev/icons?i=php', alt: 'PHP Icon' },
-        { url: 'https://skillicons.dev/icons?i=python', alt: 'Python Icon' },
-        { url: 'https://skillicons.dev/icons?i=cs', alt: 'C# Icon' },
-        { url: 'https://skillicons.dev/icons?i=cpp', alt: 'C++ Icon' },
-        { url: 'https://skillicons.dev/icons?i=vue', alt: 'Vue.js Icon' },
-        { url: 'https://skillicons.dev/icons?i=nodejs', alt: 'Node.js Icon' },
-        { url: 'https://skillicons.dev/icons?i=laravel', alt: 'Laravel Icon' },
-        { url: 'https://skillicons.dev/icons?i=selenium', alt: 'Selenium Icon' },
-        { url: 'https://skillicons.dev/icons?i=puppeteer', alt: 'Puppeteer Icon' },
-        { url: 'https://skillicons.dev/icons?i=mysql', alt: 'MySQL Icon' },
-        { url: 'https://skillicons.dev/icons?i=firebase', alt: 'Firebase Icon' },
-        { url: 'https://skillicons.dev/icons?i=figma', alt: 'Figma Icon' },
-        { url: 'https://skillicons.dev/icons?i=git', alt: 'Git Icon' },
-        { url: 'https://skillicons.dev/icons?i=github', alt: 'GitHub Icon' },
-        { url: 'https://skillicons.dev/icons?i=gitlab', alt: 'GitLab Icon' },
-        { url: 'https://skillicons.dev/icons?i=postman', alt: 'Postman Icon' },
-        { url: 'https://skillicons.dev/icons?i=vscode', alt: 'VS Code Icon' },
-        { url: 'https://skillicons.dev/icons?i=vercel', alt: 'Vercel Icon' },
-        { url: 'https://skillicons.dev/icons?i=netlify', alt: 'Netlify Icon' },
-        { url: 'https://skillicons.dev/icons?i=windows', alt: 'Windows Icon' },
-        { url: 'https://skillicons.dev/icons?i=linux', alt: 'Linux Icon' },
-        { url: 'https://skillicons.dev/icons?i=discord', alt: 'Discord Icon' },
-        { url: 'https://skillicons.dev/icons?i=chatgpt', alt: 'ChatGPT Icon' },
+      firstMarqueeIcons: [
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
+        { src: "https://skillicons.dev/icons?i=html", alt: "HTML Icon" },
+        { src: "https://skillicons.dev/icons?i=css", alt: "CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=bootstrap", alt: "Bootstrap Icon" },
+        { src: "https://skillicons.dev/icons?i=tailwind", alt: "Tailwind CSS Icon" },
+        { src: "https://skillicons.dev/icons?i=js", alt: "JavaScript Icon" },
+        { src: "https://skillicons.dev/icons?i=php", alt: "PHP Icon" },
+        { src: "https://skillicons.dev/icons?i=py", alt: "Python Icon" },
+        { src: "https://skillicons.dev/icons?i=c", alt: "C Icon" },
+        { src: "https://skillicons.dev/icons?i=cs", alt: "C# Icon" },
+        { src: "https://skillicons.dev/icons?i=cpp", alt: "C++ Icon" },
+        { src: "https://skillicons.dev/icons?i=vue", alt: "Vue.js Icon" },
+        { src: "https://skillicons.dev/icons?i=vuetify", alt: "Vuetify Icon" },
+        { src: "https://skillicons.dev/icons?i=nodejs", alt: "Node.js Icon" },
+        { src: "https://skillicons.dev/icons?i=laravel", alt: "Laravel Icon" },
+        { src: "https://skillicons.dev/icons?i=selenium", alt: "Selenium Icon" },
       ],
-      offset: 0,
-      animationDuration: 30, // Adjust as needed (seconds)
+      secondMarqueeIcons: [
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+        { src: "https://skillicons.dev/icons?i=mysql", alt: "MySQL Icon" },
+        { src: "https://skillicons.dev/icons?i=firebase", alt: "Firebase Icon" },
+        { src: "https://skillicons.dev/icons?i=figma", alt: "Figma Icon" },
+        { src: "https://skillicons.dev/icons?i=ps", alt: "Photoshop Icon" },
+        { src: "https://skillicons.dev/icons?i=powershell", alt: "Powershell Icon" },
+        { src: "https://skillicons.dev/icons?i=git", alt: "Git Icon" },
+        { src: "https://skillicons.dev/icons?i=github", alt: "GitHub Icon" },
+        { src: "https://skillicons.dev/icons?i=gitlab", alt: "GitLab Icon" },
+        { src: "https://skillicons.dev/icons?i=postman", alt: "Postman Icon" },
+        { src: "https://skillicons.dev/icons?i=visualstudio", alt: "VS Code Icon" },
+        { src: "https://skillicons.dev/icons?i=vercel", alt: "Vercel Icon" },
+        { src: "https://skillicons.dev/icons?i=netlify", alt: "Netlify Icon" },
+        { src: "https://skillicons.dev/icons?i=windows", alt: "Windows Icon" },
+        { src: "https://skillicons.dev/icons?i=linux", alt: "Linux Icon" },
+        { src: "https://skillicons.dev/icons?i=discord", alt: "Discord Icon" },
+      ]
     };
-  },
-  mounted() {
-    this.setupMarqueeAnimation();
-  },
-  methods: {
-    setupMarqueeAnimation() {
-      const containerWidth = this.$refs.marqueeContainer.offsetWidth;
-      const totalWidth = this.icons.length * 100; // Assuming each icon is 100px wide
-
-      if (totalWidth > containerWidth) {
-        // Calculate animation duration based on total width
-        this.animationDuration = (totalWidth / 100) * 10; // 10 seconds per 100px width
-        this.startMarqueeAnimation();
-      }
-    },
-    startMarqueeAnimation() {
-      setInterval(() => {
-        this.offset -= 1;
-        if (Math.abs(this.offset) >= this.icons.length * 100) {
-          this.offset = 0;
-        }
-      }, 50); // Adjust interval for smoother animation
-    },
-  },
+  }
 };
 </script>
 
 <style scoped>
+/* Base styles */
 .about {
   padding: 0 40px;
   margin-bottom: -60px;
@@ -193,7 +746,7 @@ h1 {
   padding: 20px;
   border: 1px solid black;
   border-radius: 10px;
-  animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-in;
 }
 
 .location {
@@ -269,6 +822,7 @@ svg {
   margin: 10px;
   color: var(--color-default);
 }
+
 .flex-col {
   flex-direction: column;
 }
@@ -278,7 +832,8 @@ svg {
 }
 
 .hours {
-  font-size: 50px;
+  font-size: 40px;
+  padding: 35px;
   font-weight: 600;
   color: var(--color-default);
 }
@@ -291,6 +846,7 @@ svg {
   font-weight: 300;
   color: var(--color-default);
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -301,100 +857,85 @@ svg {
     transform: translateY(0);
   }
 }
-.button-container {
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.custom-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: color 0.3s, background-color 0.3s;
-  outline: none;
-  border: 2px solid var(--border-input);
-  background-color: transparent;
-  color: var(--text-default);
-  height: 2.5rem;
-  padding: 15px 30px;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  text-decoration: none;
-  margin-top: -60px;
-}
-
-.custom-button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-default);
-}
-
-.custom-button:focus-visible {
-  box-shadow: 0 0 0 2px var(--color-secondary);
-  outline: none;
-}
-
-.custom-button:disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.size-10 {
-    width: 40px;
-    height: 40px;
-}
 
 .icon-marquee {
   width: 100%;
-  padding: 20px 0;
   overflow: hidden;
+  background-color: var(--color-bg);
+  padding: 20px;
 }
 
-/* Flex container for icons */
-.flex {
-  display: flex;
+.size-10 {
+  width: 40px;
+  height: 40px;
 }
 
-/* Icon styles */
 .icon {
-  width: 60px; /* Adjust icon size */
-  height: auto;
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
 }
 
-/* Marquee animation styles */
-.marquee-container {
-  animation: marquee 20s linear infinite; /* Initial animation duration, will be updated dynamically */
+.first-marquee-container {
+  animation: moveLeftToRight 1000s linear infinite;
 }
 
-/* Keyframes for marquee animation */
-@keyframes marquee {
-  from {
-    transform: translateX(0%);
+.second-marquee-container {
+  animation: moveRightToLeft 1000s linear infinite;
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-100%);
   }
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .about {
+    padding: 0 20px;
+  }
+  .col-md-6 {
+    width: 100%;
+  }
+  .location {
+    text-align: center;
+  }
+  .map img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .borderli {
+    padding: 10px;
+  }
+  .connect {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hours {
+    font-size: 40px;
+  }
+
+}
+
+.custom-btn {
+  margin-top: -50px;
 }
 </style>

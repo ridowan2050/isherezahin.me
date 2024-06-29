@@ -71,6 +71,39 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Custom Button
+--------------------------------------------------------------*/
+.custom-btn {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+  outline: none;
+  border: 2px solid var(--border-input);
+  background-color: transparent;
+  color: var(--text-default);
+  line-height: 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.custom-button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-default);
+}
+
+/*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
 .section-header {
