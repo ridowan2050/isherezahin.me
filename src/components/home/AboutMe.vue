@@ -21,9 +21,9 @@
           <div class="d-flex align-items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;" class="lucide lucide-link">
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>Connect
             </svg>
-            <h2 style="color: var(--color-default); font-size: 12px;">Connect</h2>
+            <h2 style="color: var(--color-default); font-size: 15px; margin-top: 10px;">Connect</h2>
           </div>
           <ul style="padding: 20px;">
             <li><a href="https://www.github.com/IsHereZahin/" target="_blank"><i class="bi bi-github"></i> Github</a></li>
@@ -798,7 +798,7 @@ h1 {
 
 .connect ul li a {
   color: var(--text-gray);
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: none;
 }
 

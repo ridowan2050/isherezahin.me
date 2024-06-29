@@ -1,12 +1,18 @@
 <template>
-  <section class="section about" id="about" aria-label="about me">
+  <section class="section hero" id="hero" aria-label="hero me">
     <div class="container">
-      <div class="about-content">
+      <div class="hero-content">
         <h2 class="h2 section-title" data-reveal="right">
           Hi. I’m <br>Abu <span class="information-color section-title">Zahin
             <span class="tooltip"><span class="tooltip-text">Zahin:</span> This is my nickname.</span>
-          </span> Mohammad Nowsin        
+          </span> Mohammad Nowsin <br>
         </h2>
+        <span class="user-title">Software Tester at 
+          <a href="https://iconicsolutionsbd.com/" target="blank">
+            <span class="information-color" style="font-size: 1rem; margin-top: -200px;" color="var(--color-primary)">Iconic
+              <span class="tooltip"><span class="tooltip-text">ICONIC SOLUTIONS PVT. LTD </span>is a premier IT firm in Chittagong, Bangladesh, offering software, IT consulting, and financial services (USA).</span></span>
+          </a>
+        </span>
         <div class="wrapper" data-reveal="right">
           <div class="row">
             <div class="col-2"><span class="span">"</span></div>
@@ -34,7 +40,7 @@
         </div>
       </div>
 
-      <figure class="about-banner" data-reveal="left">
+      <figure class="hero-banner" data-reveal="left">
         <div class="img-holder has-before">
           <img src="../assets/img/home/about-banner.jpg" loading="lazy" alt="Zahin" class="img-cover">
         </div>
@@ -50,41 +56,43 @@
 
   <!-- Main content -->
   <main id="main">
-    <AboutME />
-    <TestimonialsData />
-    <TheSkill />
+    <AboutMe />
   </main>
 </template>
 
 <script setup lang="ts">
-import AboutME from '../components/home/AboutMe.vue';
-import TheSkill from '../components/TheSkill.vue';
-import TestimonialsData from '../components/TestimonialsData.vue';
+import AboutMe from '../components/home/AboutMe.vue';
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=LXGW+WenKai+TC&family=Tiro+Telugu:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=LXGW+WenKai+TC&display=swap');
-.about {
+.hero {
   padding: 80px 0;
 }
 
-.about .container {
+.hero .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
-.about-content {
+.hero-content {
   order: 1;
 }
 
-.about-banner {
+.hero-banner {
   position: relative;
   max-width: 500px;
   margin: 0 auto;
   animation: moving 30s linear infinite;
+}
+.user-title {
+  font-size: 1rem;
+  color: var(--color-default);
+  margin-bottom: 70px;
+  display: inline-block;
 }
 
 .img-cover {
@@ -95,7 +103,7 @@ import TestimonialsData from '../components/TestimonialsData.vue';
 
 .section-title {
   font-family: "IM Fell English SC", serif; 
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
   font-size: 2rem;
   line-height: 1.3;
 }
@@ -199,13 +207,13 @@ import TestimonialsData from '../components/TestimonialsData.vue';
 }
 
 @media (max-width: 768px) {
-  .about .container {
+  .hero .container {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 0 20px;
   }
 
-  .about-banner {
+  .hero-banner {
     max-width: 100%;
     margin: 0;
   }
