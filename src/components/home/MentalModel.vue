@@ -24,9 +24,18 @@
                                         </span>
                                     </div>
                                     <div class="blog-card__info">
+                                        <div class="blog-details">
+                                            <span class="blog-type">{{ blog.type }}</span>
+                                            <span class="blog-date">{{ blog.fullDate }}</span>
+                                        </div>
                                         <h2 class="text-white">{{ truncate(blog.title, 50) }}</h2>
                                         <p>{{ truncate(blog.excerpt, 100) }}</p>
-                                        <a :href="blog.link" class="btn btn--with-icon">
+                                        <p>
+                                            <a href="blog.link" class="category"  target="blank">
+                                                <span v-for="category in blog.categories" :key="category">{{ category }}</span>
+                                            </a>
+                                        </p>
+                                        <a :href="blog.link" class="btn btn--with-icon" target="blank">
                                             <i class="btn-icon fa fa-long-arrow-right"></i>READ MORE
                                         </a>
                                     </div>
@@ -44,9 +53,9 @@
         </div>
     </section>
 </template>
-
 <script>
-import appImage from '../../assets/img/portfolio/app-1.jpg';
+import appImage1 from '../../assets/img/blog/blog1.jpg';
+import appImage2 from '../../assets/img/blog/blog2.jpg';
 
 export default {
     name: 'BlogSection',
@@ -56,20 +65,26 @@ export default {
                 {
                     id: 1,
                     day: '11',
-                    month: 'JAN',
-                    title: 'HARVICK GETS WHAT HE NEEDS, JOHNSON AMONG',
-                    excerpt: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque vero libero voluptatibus earum? Alias dignissimos quo cum, nulla esse facere atque, blanditiis doloribus at sunt quas, repellendus vel? Et, hic!',
-                    image: appImage,
-                    link: '#'
+                    month: 'JUNE',
+                    fullDate: 'June 11, 2024',
+                    title: 'The impure can never equal the pure.',
+                    excerpt: 'যেসব পুরুষেরা কোনো নারীর নোংরা অতীতকে ভুলে গিয়ে তাকে মেনে নেওয়ার মন মানসিকতা রাখে সেসব পুরুষেরা সুস্পষ্টভাবে ক্ষমাশীল হলেও নিঃসন্দেহে তাদের মধ্যে গায়রত আর আত্মসম্মানবোধের অভাব আছে।',
+                    image: appImage1,
+                    link: '#',
+                    categories: ['Purity', 'Integrity'],
+                    type: 'Article'
                 },
                 {
                     id: 2,
-                    day: '12',
-                    month: 'FEB',
-                    title: 'ANOTHER EXCITING RACE, NEW RECORDS SET',
-                    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel.',
-                    image: 'https://via.placeholder.com/600x400', // Placeholder image URL
-                    link: '#'
+                    day: '27',
+                    month: 'March',
+                    fullDate: 'March 27, 2023 ',
+                    title: 'Past experiences shaping present journey anew',
+                    excerpt: 'In 2020, I endured the most agonizing experience of my life, a moment that forever altered my perspective.',
+                    image: appImage2,
+                    link: 'https://www.facebook.com/100062477031346/videos/766194744780592',
+                    categories: ['Life'],
+                    type: 'Video'
                 }
             ]
         };
@@ -81,7 +96,6 @@ export default {
     }
 };
 </script>
-
 <style scoped>
 .date__box {
     position: absolute;
@@ -104,6 +118,10 @@ export default {
     transition: 300ms ease-in-out;
     border-radius: 10px;
 }
+.blog-card:hover 
+.btn--with-icon i {
+    background: var(--text-default);
+}
 .date__box {
     opacity: 0;
     transform: scale(0.5);
@@ -120,10 +138,7 @@ export default {
 }
 .blog-card__background {
     padding: 15px;
-    background: var(--color-bg);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    background: transparent;
 }
 .card__background--wrapper {
     height: 100%;
@@ -136,7 +151,7 @@ export default {
     position: relative;
     transition: 300ms ease-in-out;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     border-radius: 10px;
 }
 .card__background--layer {
@@ -156,6 +171,9 @@ export default {
     background: var(--color-bg);
     padding: 20px 15px;
 }
+.blog-card__info h2 {
+    text-transform: uppercase;
+}
 .blog-card:hover .date__box {
     opacity: 1;
     transform: scale(1);
@@ -167,16 +185,27 @@ export default {
     opacity: 1;
     cursor: help;
 }
-a.icon-link {
+.category span {
+    display: inline-block;
+    background-color: var(--color-secondary);
     color: var(--text-default);
-    transition: 200ms ease-in-out;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    transition: background-color 300ms ease;
 }
-a.icon-link i {
-    color: var(--color-primary);
+.category span:hover {
+    background-color: var(--text-gray);
 }
-a.icon-link:hover {
-    color: var(--color-primary);
-    text-decoration: none;
+.blog-details {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: var(--text-gray);
+}
+.blog-type {
+    font-weight: bold;
+    margin-right: 10px;
 }
 .btn {
     background: var(--color-bg);
@@ -207,7 +236,6 @@ a.icon-link:hover {
     height: 50px;
     line-height: 50px;
     vertical-align: bottom;
-    color: white;
     background: var(--color-primary);
     clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
