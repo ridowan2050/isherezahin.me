@@ -57,13 +57,13 @@
   <!-- Main content -->
   <main id="main">
     <AboutMe />
-    <MentalModel />
+    <BlogSection />
   </main>
 </template>
 
 <script setup lang="ts">
 import AboutMe from '../components/home/AboutMe.vue';
-import MentalModel from '../components/home/MentalModel.vue';
+import BlogSection from '../components/home/BlogSection.vue';
 </script>
 
 <style scoped>
