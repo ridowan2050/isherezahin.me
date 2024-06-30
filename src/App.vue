@@ -3,10 +3,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
             <RouterLink to="/" class="logo d-flex align-items-center me-auto me-lg-0">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
                 <img src="./assets/img/home/logo.png" alt="Zahin">
-                <!-- <i class="bi bi-code-slash"></i> -->
-                <!-- <h1>Zahin</h1> -->
             </RouterLink>
 
             <nav id="navbar" class="navbar">
@@ -47,9 +44,6 @@
                 <a href="https://www.youtube.com/@IsHereZahin" target="_blank"><i class="bi bi-youtube"></i></a>
                 <a href="https://www.twitter.com/IsHereZahin/" target="_blank"><i class="bi bi-twitter"></i></a>
             </div>
-            <!-- <div class="credits">
-                Deployed by <a href="https://www.linkedin.com/in/isherezahin/" target="blank">Zahin</a>
-            </div> -->
             <div class="credits">
                 For inquiries, contact me on 
                 <a href="https://join.skype.com/invite/xeu3lGYMM8So" target="_blank" rel="noopener noreferrer">
@@ -74,13 +68,47 @@ import '../public/assets/vendor/swiper/swiper-bundle.min.css';
 import '../public/assets/vendor/glightbox/css/glightbox.min.css';
 import '../public/assets/vendor/aos/aos.css';
 import '../public/assets/css/main.css'
+import Swal from 'sweetalert2';
 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../public/assets/vendor/swiper/swiper-bundle.min.js';
 import '../public/assets/vendor/glightbox/js/glightbox.min.js';
-// import '../public/assets/vendor/aos/aos.js';
 import '../public/assets/vendor/php-email-form/validate.js';
 import '../public/assets/js/main.js';
+
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Inspecting this page is not allowed!',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+});
+
+// Disable F12, Ctrl+Shift+I, Ctrl+U
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Inspecting this page is not allowed!',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        });
+    }
+});
 </script>
 
 <style scoped>
@@ -88,5 +116,4 @@ import '../public/assets/js/main.js';
     color: var(--color-primary); /* Example active link color */
     font-weight: bold; /* Example active link font weight */
 }
-
 </style>

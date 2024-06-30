@@ -107,7 +107,7 @@ export default {
           id: 2,
           date: 'October 7, 2023',
           title: 'E-commerce website',
-          excerpt: 'E-commerce websites are one of my favorites works to do.',
+          excerpt: "I enjoy working on e-commerce websites; this is my favorite project too.",
           image: appImage2,
           link: 'https://food-ecommerce-website-dev-zahin.netlify.app/',
           categories: ['Website', 'UI/UX'],
