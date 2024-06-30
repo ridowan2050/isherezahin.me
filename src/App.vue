@@ -13,8 +13,8 @@
                 <ul>
                     <li><RouterLink to="/" exact-active-class="active-link">Home</RouterLink></li>
                     <li><RouterLink to="/about" exact-active-class="active-link">About</RouterLink></li>
+                    <li><RouterLink to="/project" exact-active-class="active-link">Project</RouterLink></li>
                     <li><RouterLink to="/blog" exact-active-class="active-link">Blog</RouterLink></li>
-                    <li><RouterLink to="/article" exact-active-class="active-link">Article</RouterLink></li>
                     <li><RouterLink to="/services" exact-active-class="active-link">Services</RouterLink></li>
                     <li><RouterLink to="/contact" exact-active-class="active-link">Contact</RouterLink></li>
                 </ul>

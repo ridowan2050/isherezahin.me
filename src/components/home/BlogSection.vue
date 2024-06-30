@@ -31,7 +31,7 @@
                                         <h2 class="text-white">{{ truncate(blog.title, 50) }}</h2>
                                         <p>{{ truncate(blog.excerpt, 100) }}</p>
                                         <p>
-                                            <a href="blog.link" class="category"  target="blank">
+                                            <a :href="blog.link" class="category"  target="blank">
                                                 <span v-for="category in blog.categories" :key="category">{{ category }}</span>
                                             </a>
                                         </p>
@@ -120,7 +120,7 @@ export default {
 }
 .blog-card:hover 
 .btn--with-icon i {
-    background: var(--text-default);
+    background: var(--color-primary);
 }
 .date__box {
     opacity: 0;
@@ -236,7 +236,7 @@ export default {
     height: 50px;
     line-height: 50px;
     vertical-align: bottom;
-    background: var(--color-primary);
+    background: var(--text-default);
     clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
 .btn--only-icon {

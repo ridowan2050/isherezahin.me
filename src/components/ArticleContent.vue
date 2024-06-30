@@ -1,6 +1,6 @@
 <template>
   <div class="news-container" style="margin-top: 70px">
-    <h1>Recent News</h1>
+    <h1>Oldest News</h1>
     <div class="filter">
       <button 
         v-for="category in ['All', ...uniqueCategories]" 

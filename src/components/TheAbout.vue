@@ -5,7 +5,7 @@
       <p class="mb-4 title" style="--text-gray: var(--text-default);">👋 Hello! Assalamualikum; I'm Zahin, a passionate programmer who loves coding and tea.</p>
       <hr class="bg-light" />
     </div>
-
+    <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
     <div class="w-100">
       <h3 id="who-am-i" class="scroll-m-32 text-white text-decoration-none">WHO AM I</h3>
       <p>I am a professional software engineer from Bangladesh, currently 21 years old, specializing in Laravel, Vue.js, Pest, Selenium, Puppeteer, and database management. My passion lies in mastering software testing techniques and game development.</p>

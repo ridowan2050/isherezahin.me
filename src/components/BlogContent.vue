@@ -13,18 +13,21 @@
           <p>{{ filteredBlogs.length }} out of {{ blogs.length }} blogs displayed</p>
         </div>
         <div class="col-md-3">
-          <div class="text-end">
+          <div class="text-end input-group custom-input-group">
+            <span class="input-group-text">
+              <i class="bi bi-search"></i>
+            </span>
             <input type="text"
-                   v-model="searchQuery"
-                   placeholder="Search"
-                   class="form-control"
-                   data-bs-toggle="tooltip"
-                   title="Search by title, category, type, date, month..."
-                   data-bs-placement="bottom" />
+                  v-model="searchQuery"
+                  placeholder="Search articles"
+                  class="form-control"
+                  data-bs-toggle="tooltip"
+                  title="Search by title, category, type, date, month..."
+                  data-bs-placement="bottom" />
           </div>
         </div>
       </div>
-
+      <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
       <!-- Blog Cards -->
       <div class="row">
         <div class="col-md-6" v-for="blog in paginatedBlogs" :key="blog.id">
@@ -74,7 +77,11 @@
 
         <!-- Not Found Message -->
         <div v-if="filteredBlogs.length === 0" class="col-12 text-center mt-5">
-          <p><span style="color: var(--color-dnger);">{{ searchQuery }}</span> not found.</p>
+          <p>
+            <span :style="{ color: 'var(--color-danger)' }">{{ searchQuery }}</span> not found. 
+            You can read my old page article 
+            <RouterLink to="/article" exact-active-class="active-link">Article</RouterLink>
+          </p>        
         </div>
       </div>
 
@@ -144,15 +151,17 @@ export default {
       if (!this.searchQuery) {
         return this.blogs;
       }
-      const query = this.searchQuery.toLowerCase();
+      const queryWords = this.searchQuery.toLowerCase().split(' ');
       return this.blogs.filter(blog => {
-        return blog.title.toLowerCase().includes(query) ||
-               blog.categories.some(category => category.toLowerCase().includes(query)) ||
-               blog.type.toLowerCase().includes(query) ||
-               blog.month.toLowerCase().includes(query) ||
-               blog.day.includes(query) ||
-               blog.fullDate.toLowerCase().includes(query) ||
-               blog.tags.some(tag => tag.toLowerCase().includes(query));
+        return queryWords.every(word => {
+          return blog.title.toLowerCase().includes(word) ||
+                blog.categories.some(category => category.toLowerCase().includes(word)) ||
+                blog.type.toLowerCase().includes(word) ||
+                blog.month.toLowerCase().includes(word) ||
+                blog.day.includes(word) ||
+                blog.fullDate.toLowerCase().includes(word) ||
+                blog.tags.some(tag => tag.toLowerCase().includes(word));
+        });
       });
     },
     paginatedBlogs() {
@@ -173,6 +182,28 @@ export default {
 </script>
 
 <style scoped>
+.shape-3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  animation: moving 20s linear infinite;
+}
+
+@media (max-width: 1000px) {
+  .shape-3 {
+    display: none;
+  }
+}
+
+@keyframes moving {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
 .page-headline {
   text-align: left;
   color: var(--text-default);
@@ -180,19 +211,48 @@ export default {
 .page-head {
   border-bottom: 1px solid var(--border-input);
 }
-.text-end input {
+.custom-input-group {
+  display: flex;
+  align-items: center;
   border: 1px solid var(--border-input);
-  padding: 5px 10px;
   border-radius: 5px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.custom-input-group:focus-within {
+  border-color: var(--color-primary);
+}
+
+.custom-input-group .input-group-text {
+  border: none; 
+  padding: 10px 15px;
+  background: transparent;
+  color: var(--text-default);
+}
+
+.custom-input-group .input-group-text i {
+  color: var(--text-default);
+}
+
+.custom-input-group .form-control {
+  border: none;
+  padding: 10px 15px;
   outline: none;
   color: var(--text-default);
   background: transparent;
+  flex: 1;
 }
 
-.text-end input::placeholder {
-  color: var(--color-secondary);
+.custom-input-group .form-control::placeholder {
+  color: var(--text-gray);
 }
 
+@media (max-width: 575px) {
+  .custom-input-group {
+    width: 100%;
+  }
+}
 .date__box {
   position: absolute;
   display: flex;
@@ -216,7 +276,7 @@ export default {
 }
 .blog-card:hover 
 .btn--with-icon i {
-  background: var(--text-default);
+  background: var(--color-primary);
 }
 .date__box {
   opacity: 0;
@@ -332,7 +392,7 @@ export default {
   height: 50px;
   line-height: 50px;
   vertical-align: bottom;
-  background: var(--color-primary);
+  background: var(--text-default);
   clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
 .btn--only-icon {
@@ -379,7 +439,7 @@ export default {
   border: none;
   padding: 5px 10px;
   background: transparent;
-  color: var(--text-default);
+  color: var(--text-gray);
 }
 
 .pagination-select .form-control option {

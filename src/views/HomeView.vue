@@ -56,6 +56,7 @@
 
   <!-- Main content -->
   <main id="main">
+    <ProjectSection />
     <AboutMe />
     <BlogSection />
   </main>
@@ -63,6 +64,7 @@
 
 <script setup lang="ts">
 import AboutMe from '../components/home/AboutMe.vue';
+import ProjectSection from '../components/home/ProjectSection.vue';
 import BlogSection from '../components/home/BlogSection.vue';
 </script>
 
