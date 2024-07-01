@@ -2,8 +2,8 @@
   <section id="blog" style="margin-top: 70px">
     <div class="container">
       <!-- Page Head -->
-      <div class="row page-head gap-4">
-        <h1 class="page-headline theme-color">Blog</h1>
+      <div class="row page-head gap-2">
+        <h1 class="text-white fw-bold text-green-800 theme-color">Blog</h1>
         <p>On my personal website and blog, I share notes, articles, and various thoughts on different subjects, including personal experiences. As a programmer from Bangladesh, I started learning web development as a hobby in July 2019. I use Laravel and Vue.js to create websites, and for testing, I utilize Pest, Selenium, and Puppeteer. For code storage and hosting, I use GitHub, GitLab, Netlify, Vercel, etc. Explore my site to learn more about my journey and personal life, and discover some web development resources that have inspired me.</p>
       </div>
 

@@ -2,8 +2,8 @@
   <section id="project" style="margin-top: 70px">
     <div class="container">
       <!-- Page Head -->
-      <div class="row page-head gap-4">
-        <h1 class="page-headline theme-color">Project</h1>
+      <div class="row page-head gap-2">
+        <h1 class="text-white fw-bold text-green-800 theme-color">Project</h1>
         <p>The list of my projects. Everything was made with <span style="color: var(--rad);">❤️</span>.</p>
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">

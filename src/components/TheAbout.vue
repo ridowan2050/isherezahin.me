@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto mt-5 mb-5 mb-md-5 py-5 px-3 px-md-5">
+  <div class="container mx-auto mb-5 mb-md-5 py-5 px-3 px-md-5">
     <div class="mb-5 mt-3 mt-md-5">
       <h1 class="text-white my-4 fw-bold text-green-800 theme-color">About</h1>
       <p id="how-am-i" class="mb-4 title" style="--grey: var(--text);">👋 Hello! Assalamualikum; I'm Zahin, a passionate programmer who loves coding and tea.</p>
@@ -13,6 +13,25 @@
       <p>I excel in utilizing <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://laravel.org/">Laravel</a> and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vuejs.org/">Vue.js</a> to develop sophisticated websites. I leverage <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com">GitHub</a> for code management and hosting, followed by deployment on platforms such as <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vercel.com">Vercel</a> and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://netlify.org/">Netlify</a>.</p>
     </div>
 
+    <h5 class="scroll-m-32 text-white text-decoration-none">What I'm Up To</h5>
+    <ul>
+      <li class="text-gray-400">
+        Currently employed as a Software Tester at 
+        <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com/isherezahin">Iconic Solutions Pvt.</a>
+      </li>
+      <li class="text-gray-400">
+        Serving as a mentor, providing revision-style mentorship at 
+        <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ITExpertsChonkhulaPara/">IT Expert</a>
+      </li>
+      <li class="text-gray-400">
+        In my spare time, I am developing a freelancing marketplace platform.
+      </li>
+      <li class="text-gray-400">
+        Traveling to beautiful destinations and enjoying quality time with friends whenever possible.
+      </li>
+      <li class="text-gray-400">Continuously learning to enhance my skills and stay updated with the latest in technology.</li>
+    </ul>
+    <p></p>
     <h4 class="scroll-m-32 text-white text-decoration-none">Social links</h4>
     <ul>
       <li class="text-gray-400"><a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com/isherezahin">GitHub</a></li>
@@ -80,7 +99,7 @@ export default {
 }
 
 .title {
-  color: var(--grey);
+  color: var(--text);
 }
 
 p, li {
