@@ -32,11 +32,11 @@ const routes = [
     name: 'project',
     component: () => import('../views/ProjectContent.vue')
   },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: () => import('../views/ContactView.vue')
-  },
+  // {
+  //   path: '/contact',
+  //   name: 'contact',
+  //   component: () => import('../views/ContactView.vue')
+  // },
   {
     path: '/design',
     name: 'design',
@@ -61,6 +61,18 @@ const router = createRouter({
       return { top: 0 };
     }
   }
+});
+
+router.beforeEach((to, from, next) => {
+  const footer = document.querySelector('#footer');
+
+  if (to.name === '404') {
+    if (footer) footer.style.display = 'none';
+  } else {
+    if (footer) footer.style.display = 'block';
+  }
+
+  next();
 });
 
 export default router;

@@ -204,13 +204,7 @@ export default {
     transform: translateY(30px);
   }
 }
-.page-headline {
-  text-align: left;
-  color: var(--text);
-}
-.page-head {
-  border-bottom: 1px solid var(--border);
-}
+
 .custom-input-group {
   display: flex;
   align-items: center;

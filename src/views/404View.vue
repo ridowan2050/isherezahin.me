@@ -41,10 +41,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 //variables
-$purple: #28254c;
-$l-purple: #332f63;
+$purple: black;
+$l-purple: black;
 $t-purple: #8c8aa7;
-$pink: #ff5e65;
+$pink: linear-gradient(to right, #02a963, #00bfff);
 $white: #fff;
 
 html, body {

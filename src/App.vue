@@ -13,7 +13,7 @@
                     <li><RouterLink to="/project" exact-active-class="active-link">Project</RouterLink></li>
                     <li><RouterLink to="/blog" exact-active-class="active-link">Blog</RouterLink></li>
                     <li><RouterLink to="/services" exact-active-class="active-link">Services</RouterLink></li>
-                    <li><RouterLink to="/contact" exact-active-class="active-link">Contact</RouterLink></li>
+                    <li><RouterLink to="/uses" exact-active-class="active-link">Uses</RouterLink></li>
                 </ul>
             </nav>
             <!-- .navbar -->
@@ -33,7 +33,7 @@
     <RouterView />
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" ref="footer">
         <div class="container">
             <div class="copyright">
                 &copy; Copyright <strong><span>ZAHIN</span></strong> 2024 • Got any feedback?
