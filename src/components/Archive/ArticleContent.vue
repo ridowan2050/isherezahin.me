@@ -111,7 +111,7 @@ h1 {
   text-align: center;
   padding: 20px 0;
   font-size: 2em;
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 .filter {
@@ -126,19 +126,19 @@ h1 {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  color: var(--color-default);
-  background-color: var(--color-secondary);
+  color: var(--white);
+  background-color: var(--blackly);
 }
 
 .filter-button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-default);
+  background-color: var(--blackly);
+  color: var(--white);
   transform: scale(1.05);
 }
 
 .filter-button.active {
-  background-color: var(--color-primary);
-  color: var(--color-default);
+  background-color: var(--theme);
+  color: var(--white);
 }
 
 .articles {
@@ -149,26 +149,26 @@ h1 {
 
 .article {
   width: 100%;
-  border-bottom: 1px solid var(--color-default);
+  border-bottom: 1px solid var(--white);
   padding: 20px;
   margin-bottom: 20px;
   transition: background-color 0.3s;
 }
 
 .article h2 {
-  color: var(--color-default);
+  color: var(--white);
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
 .article p.content {
   line-height: 1.5;
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .article .datetime {
   font-size: 0.9em;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .article .time {
@@ -178,11 +178,11 @@ h1 {
 .article .read-more {
   text-decoration: none;
   font-weight: bold;
-  color: var(--color-primary);
+  color: var(--theme);
 }
 
 .article .read-more:hover {
-  color: var(--color-primary);
+  color: var(--theme);
 }
 
 .bi-arrow-right {
@@ -191,7 +191,7 @@ h1 {
 
 .category {
   display: inline-block;
-  color: var(--text-default);
+  color: var(--text);
   margin-right: 5px;
 }
 </style>

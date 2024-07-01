@@ -26,14 +26,14 @@
 
 /* Colors */
 :root {
-  --color-default: white;
-  --text-gray: #999;
-  --text-default: #d8d4d2;
-  --color-primary: #00E6A5;
-  --color-secondary: #303133;
-  --border-input: #1e1e1e;
+  --theme: #00E6A5;
+  --white: white;
+  --text: #c2c2c2;
+  --grey: rgb(185, 185, 185);
+  --blackly: #303133;
+  --border: #1e1e1e;
   --color-bg: #000000;
-  --color-danger: red;
+  --rad: red;
 }
 
 /* Smooth scroll behavior */
@@ -46,18 +46,17 @@
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
-  color: var(--color-default);
+  color: var(--white);
   background-color: var(--color-bg);
-  font-weight: 300;
 }
 
 a {
-  color: var(--color-default);
+  color: var(--white);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--theme);
   text-decoration: none;
 }
 
@@ -72,8 +71,13 @@ h6 {
 
 .headline {
   text-align: center;
-  color: var(--color-default);
+  color: var(--white);
   margin: 30px;
+}
+.theme-color {
+  background: linear-gradient(to right, #02a963, #00bfff); /* Apply gradient directly */
+  -webkit-background-clip: text; /* Clip text to the background */
+  -webkit-text-fill-color: transparent;  
 }
 .shape-3 {
   position: absolute;
@@ -116,9 +120,9 @@ h6 {
   font-weight: 500;
   transition: color 0.3s, background-color 0.3s;
   outline: none;
-  border: 2px solid var(--border-input);
+  border: 2px solid var(--border);
   background-color: transparent;
-  color: var(--text-default);
+  color: var(--text);
   line-height: 1.25rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -127,8 +131,8 @@ h6 {
 }
 
 .custom-button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-default);
+  background-color: var(--blackly);
+  color: var(--white);
 }
 
 /*--------------------------------------------------------------
@@ -146,7 +150,7 @@ h6 {
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--text-default);
+  color: var(--text);
   font-family: var(--font-primary);
 }
 
@@ -155,7 +159,7 @@ h6 {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: var(--color-primary);
+  background: var(--theme);
   margin: 4px 10px;
 }
 
@@ -164,7 +168,7 @@ h6 {
   font-size: 36px;
   font-weight: 700;
   font-family: var(--font-secondary);
-  color: var(--color-default);
+  color: var(--text);
 }
 
 /*--------------------------------------------------------------
@@ -179,7 +183,7 @@ h6 {
 .page-header h2 {
   font-size: 56px;
   font-weight: 500;
-  color: var(--color-default);
+  color: var(--white);
   font-family: var(--font-secondary);
 }
 
@@ -190,7 +194,7 @@ h6 {
 }
 
 .page-header p {
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .page-header .cta-btn {
@@ -203,12 +207,12 @@ h6 {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: 0.3s;
-  color: var(--color-default);
-  background: var(--color-primary);
+  color: var(--white);
+  background: var(--theme);
 }
 
 .page-header .cta-btn:hover {
-  background: var(--color-primary);
+  background: var(--theme);
 }
 
 /*--------------------------------------------------------------
@@ -221,7 +225,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background: var(--color-primary);
+  background: var(--theme);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -230,13 +234,13 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--color-default);
+  color: var(--white);
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background: var(--color-primary);
-  color: var(--color-default);
+  background: var(--theme);
+  color: var(--white);
 }
 
 .scroll-top.active {
@@ -260,7 +264,7 @@ h6 {
 #preloader:before,
 #preloader:after {
   content: "";
-  background-color: var(--color-secondary);
+  background-color: var(--blackly);
   position: absolute;
   inset: 0;
   width: 50%;
@@ -286,7 +290,7 @@ h6 {
 #preloader .line:before {
   content: "";
   position: absolute;
-  background-color: var(--color-default);
+  background-color: var(--white);
   left: 0;
   top: 50%;
   width: 1px;
@@ -298,7 +302,7 @@ h6 {
 #preloader .line:after {
   content: "";
   position: absolute;
-  background-color: var(--text-default);
+  background-color: var(--text);
   left: 0;
   top: 0;
   width: 1px;
@@ -375,7 +379,7 @@ h6 {
   font-size: 32px;
   margin: 0;
   font-weight: 400;
-  color: var(--color-default);
+  color: var(--white);
   font-family: var(--font-secondary);
 }
 
@@ -400,7 +404,7 @@ h6 {
 }
 
 .header .header-social-links a {
-  color: var(--text-default);
+  color: var(--text);
   padding-left: 15px;
   display: inline-block;
   line-height: 0px;
@@ -409,7 +413,7 @@ h6 {
 }
 
 .header .header-social-links a:hover {
-  color: var(--color-default);
+  color: var(--white);
 }
 
 @media (max-width: 575px) {
@@ -440,7 +444,7 @@ h6 {
   visibility: hidden;
   width: 250px;
   background-color: var(--color-bg);
-  color: var(--color-default);
+  color: var(--white);
   text-align: center;
   border-radius: 5px;
   padding: 5px 10px;
@@ -452,24 +456,24 @@ h6 {
   opacity: 0;
   transition: opacity 0.2s;
   font-size: 12px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--theme);
 }
 .tech .tooltip .tech-name {
   font-weight: bold;
-  background: var(--color-primary);
+  background: var(--theme);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--theme);
 }
 .tech-color {
   font-weight: bold;
-  color: var(--color-default);
-  border-bottom: 1px solid var(--color-default);
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
 }
 
 .tech-color:hover {
-  color: var(--color-primary);
-  border-bottom: 1px solid var(--color-primary);
+  color: var(--theme);
+  border-bottom: 1px solid var(--theme);
 }
 
 .tech:hover .tooltip {
@@ -481,11 +485,11 @@ h6 {
 .information-color {
   position: relative;
   cursor: pointer;
-  color: var(--color-default);
+  color: var(--white);
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.6;
-  border-bottom: 1px dotted var(--text-default);
+  border-bottom: 1px dotted var(--text);
   overflow: hidden; /* Ensures the border animation is contained */
 }
 
@@ -502,11 +506,11 @@ h6 {
 
 .information-color:hover::before {
   width: 100%;
-  background-color: var(--text-default);
+  background-color: var(--text);
 }
 
 .information-color:hover {
-  color: var(--color-primary);
+  color: var(--theme);
   border-bottom: none;
 }
 
@@ -514,7 +518,7 @@ h6 {
   visibility: hidden;
   width: 250px;
   background-color: var(--color-bg);
-  color: var(--color-default);
+  color: var(--white);
   text-align: center;
   border-radius: 5px;
   padding: 5px 10px;
@@ -523,7 +527,7 @@ h6 {
   bottom: 125%;
   left: 50%;
   margin-left: -125px;
-  border: 1px dotted var(--color-primary);
+  border: 1px dotted var(--theme);
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
@@ -532,10 +536,10 @@ h6 {
 
 .information-color .tooltip .tooltip-text {
   font-weight: bold;
-  background: var(--color-primary);
+  background: var(--theme);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--theme);
 }
 
 .information-color:hover .tooltip {
@@ -574,7 +578,7 @@ h6 {
     letter-spacing: 1px;
     font-size: 13px;
     font-weight: 400;
-    color: var(--text-default);
+    color: var(--text);
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -588,11 +592,11 @@ h6 {
 
   .navbar a:hover,
   .navbar li:hover>a {
-    color: var(--color-default);
+    color: var(--white);
   }
 
   .active-link {
-    color: var(--color-primary); /* Example active link color */
+    color: var(--theme); /* Example active link color */
     font-weight: bold; /* Example active link font weight */
   }
 
@@ -606,7 +610,7 @@ h6 {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: var(--color-secondary);
+    background: var(--blackly);
     transition: 0.3s;
     border-radius: 4px;
   }
@@ -629,7 +633,7 @@ h6 {
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
   .navbar .dropdown ul li:hover>a {
-    color: var(--color-default);
+    color: var(--white);
   }
 
   .navbar .dropdown:hover>ul {
@@ -706,7 +710,7 @@ h6 {
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 400;
-    color: var(--text-default);
+    color: var(--text);
     letter-spacing: 1px;
     white-space: nowrap;
     transition: 0.3s;
@@ -723,7 +727,7 @@ h6 {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: var(--color-default);
+    color: var(--white);
   }
 
   .navbar .dropdown ul,
@@ -742,7 +746,7 @@ h6 {
   }
 
   .mobile-nav-show {
-    color: var(--color-default);
+    color: var(--white);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -752,7 +756,7 @@ h6 {
   }
 
   .mobile-nav-hide {
-    color: var(--color-default);
+    color: var(--white);
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -786,7 +790,7 @@ h6 {
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
-  color: var(--color-primary);
+  color: var(--theme);
 }
 
 .about .content ul {
@@ -807,7 +811,7 @@ h6 {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: var(--color-primary);
+  color: var(--theme);
   line-height: 0;
 }
 
@@ -840,7 +844,7 @@ h6 {
 .gallery .gallery-links .preview-link,
 .gallery .gallery-links .details-link {
   font-size: 20px;
-  color: var(--text-default);
+  color: var(--text);
   transition: 0.3s;
   line-height: 1.2;
   margin: 30px 8px 0 8px;
@@ -848,7 +852,7 @@ h6 {
 
 .gallery .gallery-links .preview-link:hover,
 .gallery .gallery-links .details-link:hover {
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .gallery .gallery-links .details-link {
@@ -874,7 +878,7 @@ h6 {
 }
 
 .glightbox-clean .gslide-title {
-  color: var(--text-default);
+  color: var(--text);
   margin: 0;
 }
 
@@ -888,12 +892,12 @@ h6 {
 .gallery-single .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: var(--text-default);
+  background-color: var(--text);
   opacity: 1;
 }
 
 .gallery-single .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--color-primary);
+  background-color: var(--theme);
 }
 
 .gallery-single .swiper-button-prev,
@@ -904,7 +908,7 @@ h6 {
 
 .gallery-single .swiper-button-prev:after,
 .gallery-single .swiper-button-next:after {
-  color: var(--text-default);
+  color: var(--text);
   background-color: var(--color-bg);
   font-size: 24px;
   border-radius: 50%;
@@ -944,7 +948,7 @@ h6 {
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--color-primary);
+  background: var(--theme);
   left: 0;
   bottom: 0;
 }
@@ -964,27 +968,27 @@ h6 {
 .gallery-single .portfolio-info ul strong {
   text-transform: uppercase;
   font-weight: 400;
-  color: var(--text-default);
+  color: var(--text);
   font-size: 14px;
 }
 
 .gallery-single .portfolio-info .btn-visit {
   padding: 8px 40px;
-  background: var(--color-primary);
-  color: var(--color-default);
+  background: var(--theme);
+  color: var(--white);
   border-radius: 50px;
   transition: 0.3s;
 }
 
 .gallery-single .portfolio-info .btn-visit:hover {
-  background: var(--color-primary);
+  background: var(--theme);
 }
 
 .gallery-single .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--color-default);
+  color: var(--white);
   font-family: var(--font-secondary);
 }
 
@@ -995,7 +999,7 @@ h6 {
 .gallery-single .portfolio-description .testimonial-item {
   padding: 30px 30px 0 30px;
   position: relative;
-  background: var(--color-secondary);
+  background: var(--blackly);
   height: 100%;
   margin-bottom: 50px;
 }
@@ -1003,7 +1007,7 @@ h6 {
 .gallery-single .portfolio-description .testimonial-item .testimonial-img {
   width: 90px;
   border-radius: 50px;
-  border: 6px solid var(--text-default);
+  border: 6px solid var(--text);
   float: left;
   margin: 0 10px 0 0;
 }
@@ -1017,13 +1021,13 @@ h6 {
 
 .gallery-single .portfolio-description .testimonial-item h4 {
   font-size: 14px;
-  color: var(--text-default);
+  color: var(--text);
   margin: 0;
 }
 
 .gallery-single .portfolio-description .testimonial-item .quote-icon-left,
 .gallery-single .portfolio-description .testimonial-item .quote-icon-right {
-  color: var(--color-primary);
+  color: var(--theme);
   font-size: 26px;
   line-height: 0;
 }
@@ -1054,7 +1058,7 @@ h6 {
 .services .service-item {
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
-  background: var(--color-secondary);
+  background: var(--blackly);
   height: 100%;
   overflow: hidden;
   z-index: 1;
@@ -1063,15 +1067,15 @@ h6 {
 .services .service-item:before {
   content: "";
   position: absolute;
-  background: var(--text-default);
+  background: var(--text);
   top: -200px;
   transition: all 0.3s;
   z-index: -1;
 }
 
 .services .service-item i {
-  background: var(--color-primary);
-  color: var(--color-default);
+  background: var(--theme);
+  color: var(--white);
   font-size: 24px;
   transition: 0.3s;
   display: flex;
@@ -1090,7 +1094,7 @@ h6 {
 }
 
 .services .service-item h4 a {
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .services .service-item p {
@@ -1100,7 +1104,7 @@ h6 {
 }
 
 .services .service-item:hover:before {
-  background: var(--color-primary);
+  background: var(--theme);
   right: 0;
   top: 0;
   width: 100%;
@@ -1110,12 +1114,12 @@ h6 {
 
 .services .service-item:hover h4 a,
 .services .service-item:hover p {
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .services .service-item:hover i {
-  background: var(--color-default);
-  color: var(--color-primary);
+  background: var(--white);
+  color: var(--theme);
 }
 
 /*--------------------------------------------------------------
@@ -1126,7 +1130,7 @@ h6 {
 }
 
 .pricing .pricing-item {
-  border-bottom: 1px dashed var(--text-default);
+  border-bottom: 1px dashed var(--text);
   width: 100%;
   height: 100%;
   padding: 0 0 15px 0;
@@ -1136,7 +1140,7 @@ h6 {
   margin: 0;
   font-size: 18px;
   font-weight: 800;
-  color: var(--color-primary);
+  color: var(--theme);
 }
 
 .pricing .pricing-item h4 {
@@ -1147,7 +1151,7 @@ h6 {
 .pricing .pricing-item p {
   margin: 0;
   font-weight: 500;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 /*--------------------------------------------------------------
@@ -1159,7 +1163,7 @@ h6 {
 
 .contact .info-item i {
   font-size: 20px;
-  color: var(--color-primary);
+  color: var(--theme);
   float: left;
   width: 44px;
   height: 44px;
@@ -1177,19 +1181,19 @@ h6 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .contact .info-item:hover i {
-  background: var(--color-primary);
-  color: var(--color-default);
+  background: var(--theme);
+  color: var(--white);
 }
 
 .contact .php-email-form {
@@ -1202,8 +1206,8 @@ h6 {
 
 .contact .php-email-form .error-message {
   display: none;
-  color: var(--color-default);
-  background: var(--color-danger);
+  color: var(--white);
+  background: var(--rad);
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1215,8 +1219,8 @@ h6 {
 
 .contact .php-email-form .sent-message {
   display: none;
-  color: var(--color-default);
-  background: var(--color-primary);
+  color: var(--white);
+  background: var(--theme);
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1224,10 +1228,10 @@ h6 {
 
 .contact .php-email-form .loading {
   display: none;
-  background: var(--color-secondary);
+  background: var(--blackly);
   text-align: center;
   padding: 15px;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .contact .php-email-form .loading:before {
@@ -1237,8 +1241,8 @@ h6 {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid var(--color-primary);
-  border-top-color: var(--color-secondary);
+  border: 3px solid var(--theme);
+  border-top-color: var(--blackly);
   animation: animate-loading 1s linear infinite;
 }
 
@@ -1247,9 +1251,9 @@ h6 {
   border-radius: 4px;
   box-shadow: none;
   font-size: 14px;
-  background-color: var(--color-default);
-  border: 1px solid var(--text-default);
-  color: var(--color-secondary);
+  background-color: var(--white);
+  border: 1px solid var(--text);
+  color: var(--blackly);
 }
 
 .contact .php-email-form input {
@@ -1261,16 +1265,16 @@ h6 {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: var(--color-primary);
+  background: var(--theme);
   border: 0;
   padding: 10px 35px;
-  color: var(--color-default);
+  color: var(--white);
   transition: 0.4s;
   border-radius: 4px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: var(--color-primary);
+  background: var(--theme);
 }
 
 @keyframes animate-loading {
@@ -1290,16 +1294,16 @@ h6 {
   margin-top: 30px;
   padding: 30px 0;
   font-size: 14px;
-  border-top: 1px solid var(--color-secondary);
+  border-top: 1px solid var(--blackly);
 }
 
 .footer .copyright {
   text-align: center;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .credits {
-  color: var(--text-default);
+  color: var(--text);
   margin-top: 20px;
   text-align: center;
 }
@@ -1325,14 +1329,14 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--text-default);
+  border: 1px solid var(--text);
   font-size: 16px;
-  color: var(--text-default);
+  color: var(--text);
   margin: 0 5px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--theme);
+  border-color: var(--theme);
 }

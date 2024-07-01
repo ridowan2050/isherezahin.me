@@ -3,8 +3,8 @@
     <div class="container">
       <!-- Page Head -->
       <div class="row page-head gap-4">
-        <h1 class="page-headline">Project</h1>
-        <p>The list of my projects. Everything was made with <span style="color: var(--color-danger);">❤️</span>.</p>
+        <h1 class="page-headline theme-color">Project</h1>
+        <p>The list of my projects. Everything was made with <span style="color: var(--rad);">❤️</span>.</p>
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
       <!-- Search and Filters -->
@@ -61,7 +61,7 @@
 
         <!-- Not Found Message -->
         <div v-if="filteredProjects.length === 0" class="col-12 text-center mt-5">
-          <p><span style="color: var(--color-danger);">{{ searchQuery }}</span> not found.</p>
+          <p><span style="color: var(--rad);">{{ searchQuery }}</span> not found.</p>
         </div>
       </div>
 
@@ -155,46 +155,46 @@ export default {
 <style scoped>
 .page-headline {
   text-align: left;
-  color: var(--text-default);
+  color: var(--text);
 }
 .page-head {
-  border-bottom: 1px solid var(--border-input);
+  border-bottom: 1px solid var(--border);
 }
 .custom-input-group {
   display: flex;
   align-items: center;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   border-radius: 5px;
   width: 100%;
   transition: border-color 0.3s;
 }
 
 .custom-input-group:focus-within {
-  border-color: var(--color-primary);
+  border-color: var(--theme);
 }
 
 .custom-input-group .input-group-text {
   border: none; 
   padding: 10px 15px;
   background: transparent;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .custom-input-group .input-group-text i {
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .custom-input-group .form-control {
   border: none;
   padding: 10px 15px;
   outline: none;
-  color: var(--text-default);
+  color: var(--text);
   background: transparent;
   flex: 1;
 }
 
 .custom-input-group .form-control::placeholder {
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 @media (max-width: 575px) {
@@ -208,8 +208,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--text-default);
-  border: 4px solid var(--text-default);
+  color: var(--text);
+  border: 4px solid var(--text);
   font-weight: bold;
   padding: 5px 10px;
 }
@@ -219,18 +219,18 @@ export default {
 .project-card {
   padding: 30px;
   position: relative;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   transition: 300ms ease-in-out;
   border-radius: 10px;
   margin-top: -50px;
 }
 .project-card:hover 
 .btn--with-icon i {
-  background: var(--text-default);
+  background: var(--text);
 }
 .project-card {
   position: relative;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -268,12 +268,12 @@ export default {
 
 .project-card__info h2 {
   font-weight: 600;
-  color: var(--text-default);
+  color: var(--text);
   margin-bottom: 10px;
 }
 
 .project-card__info p {
-  color: var(--text-gray);
+  color: var(--grey);
   line-height: 1.6;
 }
 
@@ -284,8 +284,8 @@ export default {
 .language span {
   font-size: 1rem;
   display: inline-block;
-  color: var(--color-default);
-  background-color: var(--border-input);
+  color: var(--white);
+  background-color: var(--border);
   padding: .5rem 1rem;
   margin-right: 5px;
   border-radius: 50px;
@@ -293,8 +293,8 @@ export default {
 }
 
 .language span:hover {
-  border: 1px solid var(--text-gray);
-  background-color: var(--color-secondary);
+  border: 1px solid var(--grey);
+  background-color: var(--blackly);
 }
   
 @media (max-width: 768px) {
@@ -309,15 +309,15 @@ export default {
   margin-top: 20px;
   padding: 10px;
   background: var(--color-bg);
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .pagination-btn {
   background: var(--color-bg);
-  color: var(--text-default);
-  border: 1px solid var(--border-input);
+  color: var(--text);
+  border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -330,24 +330,24 @@ export default {
 }
 
 .pagination-btn:hover:not(:disabled) {
-  background: var(--color-primary);
-  color: var(--text-default);
+  background: var(--theme);
+  color: var(--text);
 }
 
 .pagination-info {
   font-size: 0.9em;
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 .pagination-select .form-control {
   border: none;
   padding: 5px 10px;
   background: transparent;
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 .pagination-select .form-control option {
   background: var(--color-bg);
-  color: var(--text-default);
+  color: var(--text);
 }
 </style>

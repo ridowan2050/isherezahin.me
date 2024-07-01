@@ -91,18 +91,18 @@ export default {
 .project-card {
   padding: 30px;
   position: relative;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   transition: 300ms ease-in-out;
   border-radius: 10px;
   margin-top: -50px;
 }
 .project-card:hover 
 .btn--with-icon i {
-  background: var(--text-default);
+  background: var(--text);
 }
 .project-card {
   position: relative;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -140,12 +140,12 @@ export default {
 
 .project-card__info h2 {
   font-weight: 600;
-  color: var(--text-default);
+  color: var(--text);
   margin-bottom: 10px;
 }
 
 .project-card__info p {
-  color: var(--text-gray);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -156,8 +156,8 @@ export default {
 .language span {
   font-size: 1rem;
   display: inline-block;
-  color: var(--color-default);
-  background-color: var(--border-input);
+  color: var(--white);
+  background-color: var(--border);
   padding: .5rem 1rem;
   margin-right: 5px;
   border-radius: 50px;
@@ -165,8 +165,8 @@ export default {
 }
 
 .language span:hover {
-  border: 1px solid var(--text-gray);
-  background-color: var(--color-secondary);
+  border: 1px solid var(--text);
+  background-color: var(--blackly);
 }
   
 @media (max-width: 768px) {

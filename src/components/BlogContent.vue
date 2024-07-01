@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Page Head -->
       <div class="row page-head gap-4">
-        <h1 class="page-headline">Blog</h1>
+        <h1 class="page-headline theme-color">Blog</h1>
         <p>On my personal website and blog, I share notes, articles, and various thoughts on different subjects, including personal experiences. As a programmer from Bangladesh, I started learning web development as a hobby in July 2019. I use Laravel and Vue.js to create websites, and for testing, I utilize Pest, Selenium, and Puppeteer. For code storage and hosting, I use GitHub, GitLab, Netlify, Vercel, etc. Explore my site to learn more about my journey and personal life, and discover some web development resources that have inspired me.</p>
       </div>
 
@@ -78,7 +78,7 @@
         <!-- Not Found Message -->
         <div v-if="filteredBlogs.length === 0" class="col-12 text-center mt-5">
           <p>
-            <span :style="{ color: 'var(--color-danger)' }">{{ searchQuery }}</span> not found. 
+            <span :style="{ color: 'var(--rad)' }">{{ searchQuery }}</span> not found. 
             You can read my old page article 
             <RouterLink to="/article" exact-active-class="active-link">Article</RouterLink>
           </p>        
@@ -206,46 +206,46 @@ export default {
 }
 .page-headline {
   text-align: left;
-  color: var(--text-default);
+  color: var(--text);
 }
 .page-head {
-  border-bottom: 1px solid var(--border-input);
+  border-bottom: 1px solid var(--border);
 }
 .custom-input-group {
   display: flex;
   align-items: center;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   border-radius: 5px;
   width: 100%;
   transition: border-color 0.3s;
 }
 
 .custom-input-group:focus-within {
-  border-color: var(--color-primary);
+  border-color: var(--theme);
 }
 
 .custom-input-group .input-group-text {
   border: none; 
   padding: 10px 15px;
   background: transparent;
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .custom-input-group .input-group-text i {
-  color: var(--text-default);
+  color: var(--text);
 }
 
 .custom-input-group .form-control {
   border: none;
   padding: 10px 15px;
   outline: none;
-  color: var(--text-default);
+  color: var(--text);
   background: transparent;
   flex: 1;
 }
 
 .custom-input-group .form-control::placeholder {
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 @media (max-width: 575px) {
@@ -259,8 +259,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--text-default);
-  border: 4px solid var(--text-default);
+  color: var(--text);
+  border: 4px solid var(--text);
   font-weight: bold;
   padding: 5px 10px;
 }
@@ -270,13 +270,13 @@ export default {
 .blog-card {
   padding: 30px;
   position: relative;
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   transition: 300ms ease-in-out;
   border-radius: 10px;
 }
 .blog-card:hover 
 .btn--with-icon i {
-  background: var(--color-primary);
+  background: var(--theme);
 }
 .date__box {
   opacity: 0;
@@ -343,8 +343,8 @@ export default {
 }
 .category span {
   display: inline-block;
-  background-color: var(--color-secondary);
-  color: var(--text-default);
+  background-color: var(--blackly);
+  color: var(--text);
   padding: 5px 10px;
   margin-right: 5px;
   border-radius: 5px;
@@ -352,12 +352,12 @@ export default {
   transition: background-color 300ms ease;
 }
 .category span:hover {
-  background-color: var(--text-gray);
+  background-color: var(--border);
 }
 .blog-details {
   margin-bottom: 10px;
   font-size: 0.9em;
-  color: var(--text-gray);
+  color: var(--grey);
 }
 .blog-type {
   font-weight: bold;
@@ -365,7 +365,7 @@ export default {
 }
 .btn {
   background: var(--color-bg);
-  color: var(--text-default);
+  color: var(--text);
   font-weight: bold;
   outline: none;
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -381,7 +381,7 @@ export default {
   box-shadow: none;
 }
 .btn:hover {
-  color: var(--color-primary);
+  color: var(--theme);
 }
 .btn--with-icon {
   padding-right: 20px;
@@ -392,7 +392,7 @@ export default {
   height: 50px;
   line-height: 50px;
   vertical-align: bottom;
-  background: var(--text-default);
+  background: var(--text);
   clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
 .btn--only-icon {
@@ -405,15 +405,15 @@ export default {
   margin-top: 20px;
   padding: 10px;
   background: var(--color-bg);
-  border: 1px solid var(--border-input);
+  border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .pagination-btn {
   background: var(--color-bg);
-  color: var(--text-default);
-  border: 1px solid var(--border-input);
+  color: var(--text);
+  border: 1px solid var(--border);
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -426,24 +426,24 @@ export default {
 }
 
 .pagination-btn:hover:not(:disabled) {
-  background: var(--color-primary);
-  color: var(--text-default);
+  background: var(--theme);
+  color: var(--text);
 }
 
 .pagination-info {
   font-size: 0.9em;
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 .pagination-select .form-control {
   border: none;
   padding: 5px 10px;
   background: transparent;
-  color: var(--text-gray);
+  color: var(--grey);
 }
 
 .pagination-select .form-control option {
   background: var(--color-bg);
-  color: var(--text-default);
+  color: var(--text);
 }
 </style>

@@ -9,7 +9,7 @@
         </h2>
         <span class="user-title">Software Tester at 
           <a href="https://iconicsolutionsbd.com/" target="blank">
-            <span class="information-color" style="font-size: 1rem; margin-top: -200px;" color="var(--color-primary)">Iconic
+            <span class="information-color" style="font-size: 1rem; margin-top: -200px;" color="var(--theme)">Iconic
               <span class="tooltip"><span class="tooltip-text">ICONIC SOLUTIONS PVT. LTD </span>is a premier IT firm in Chittagong, Bangladesh, offering software, IT consulting, and financial services (USA).</span></span>
           </a>
         </span>
@@ -94,7 +94,7 @@ import BlogSection from '../components/home/BlogSection.vue';
 }
 .user-title {
   font-size: 1rem;
-  color: var(--color-default);
+  color: var(--white);
   margin-bottom: 70px;
   display: inline-block;
 }

@@ -103,8 +103,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--text-default);
-    border: 4px solid var(--text-default);
+    color: var(--text);
+    border: 4px solid var(--text);
     font-weight: bold;
     padding: 5px 10px;
 }
@@ -114,13 +114,13 @@ export default {
 .blog-card {
     padding: 30px;
     position: relative;
-    border: 1px solid var(--border-input);
+    border: 1px solid var(--border);
     transition: 300ms ease-in-out;
     border-radius: 10px;
 }
 .blog-card:hover 
 .btn--with-icon i {
-    background: var(--color-primary);
+    background: var(--theme);
 }
 .date__box {
     opacity: 0;
@@ -187,8 +187,8 @@ export default {
 }
 .category span {
     display: inline-block;
-    background-color: var(--color-secondary);
-    color: var(--text-default);
+    background-color: var(--blackly);
+    color: var(--text);
     padding: 5px 10px;
     margin-right: 5px;
     border-radius: 5px;
@@ -196,12 +196,12 @@ export default {
     transition: background-color 300ms ease;
 }
 .category span:hover {
-    background-color: var(--text-gray);
+    background-color: var(--border);
 }
 .blog-details {
     margin-bottom: 10px;
     font-size: 0.9em;
-    color: var(--text-gray);
+    color: var(--grey);
 }
 .blog-type {
     font-weight: bold;
@@ -209,7 +209,7 @@ export default {
 }
 .btn {
     background: var(--color-bg);
-    color: var(--text-default);
+    color: var(--text);
     font-weight: bold;
     outline: none;
     box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -225,7 +225,7 @@ export default {
     box-shadow: none;
 }
 .btn:hover {
-    color: var(--color-primary);
+    color: var(--theme);
 }
 .btn--with-icon {
     padding-right: 20px;
@@ -236,7 +236,7 @@ export default {
     height: 50px;
     line-height: 50px;
     vertical-align: bottom;
-    background: var(--text-default);
+    background: var(--text);
     clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
 }
 .btn--only-icon {

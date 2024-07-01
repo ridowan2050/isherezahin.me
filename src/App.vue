@@ -113,7 +113,7 @@ document.addEventListener('keydown', function(e) {
 
 <style scoped>
 .active-link {
-    color: var(--color-primary); /* Example active link color */
+    color: var(--theme); /* Example active link color */
     font-weight: bold; /* Example active link font weight */
 }
 </style>

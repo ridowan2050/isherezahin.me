@@ -23,7 +23,7 @@
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>Connect
             </svg>
-            <h2 style="color: var(--color-default); font-size: 15px; margin-top: 10px;">Connect</h2>
+            <h2 style="color: var(--white); font-size: 15px; margin-top: 10px;">Connect</h2>
           </div>
           <ul style="padding: 20px;">
             <li><a href="https://www.github.com/IsHereZahin/" target="_blank"><i class="bi bi-github"></i> Github</a></li>
@@ -747,12 +747,12 @@ export default {
 
 .location {
   align-items: left;
-  color: var(--text-gray);
-  border-bottom: 1px solid var(--color-secondary);
+  color: var(--grey);
+  border-bottom: 1px solid var(--blackly);
 }
 
 .location-title {
-  color: var(--color-default);
+  color: var(--white);
   font-size: 15px;
   margin-bottom: -20px;
 }
@@ -793,19 +793,19 @@ export default {
 }
 
 .connect ul li a {
-  color: var(--text-gray);
+  color: var(--grey);
   font-size: 15px;
   text-decoration: none;
 }
 
 .connect ul li a:hover {
-  color: var(--color-default);
+  color: var(--white);
 }
 
 /* Tools */
 .stacks {
   font-size: 15px;
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .flex {
@@ -816,7 +816,7 @@ export default {
 
 svg {
   margin: 10px;
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .flex-col {
@@ -831,7 +831,7 @@ svg {
   font-size: 40px;
   padding: 25px;
   font-weight: 600;
-  color: var(--color-default);
+  color: var(--white);
 }
 
 .text-sm {
@@ -840,7 +840,7 @@ svg {
 
 .font-light {
   font-weight: 300;
-  color: var(--color-default);
+  color: var(--white);
 }
 
 @keyframes fadeIn {
