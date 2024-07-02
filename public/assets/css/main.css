@@ -75,6 +75,9 @@ h6 {
 .page-head {
   border-bottom: 1px solid var(--border);
 }
+.page-head p {
+  color: var(--grey);
+}
 .headline {
   text-align: center;
   color: var(--white);

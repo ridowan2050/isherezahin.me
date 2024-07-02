@@ -29,7 +29,7 @@
                                             <span class="blog-date">{{ blog.fullDate }}</span>
                                         </div>
                                         <h2 class="text-white">{{ truncate(blog.title, 50) }}</h2>
-                                        <p>{{ truncate(blog.excerpt, 100) }}</p>
+                                        <p style="color: var(--grey)">{{ truncate(blog.excerpt, 100) }}</p>
                                         <p>
                                             <a :href="blog.link" class="category"  target="blank">
                                                 <span v-for="category in blog.categories" :key="category">{{ category }}</span>
