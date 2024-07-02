@@ -35,6 +35,38 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer" ref="footer">
         <div class="container">
+
+            <div class="tech-stack footer-nav">
+    <div class="tech">
+        <RouterLink to="https://github.com/IsHereZahin/isherezahin.me" target="_blank" exact class="link-a">Source Code</RouterLink>
+        <div class="tooltip"><span class="tech-name">Source Code:</span> This website is open source</div>
+    </div>
+    <div class="tech">
+        <RouterLink to="/design" exact class="link-a">Design</RouterLink>
+        <div class="tooltip"><span class="tech-name">Design:</span> Explore the design process</div>
+    </div>
+    <div class="tech">
+        <RouterLink to="/guestbook" exact class="link-a">Guestbook</RouterLink>
+        <div class="tooltip"><span class="tech-name">Guestbook:</span> Coming soon</div>
+    </div>
+    <div class="tech">
+        <RouterLink to="https://github.com/IsHereZahin/isherezahin.me" target="_blank" exact class="link-a">Contribute</RouterLink>
+        <div class="tooltip"><span class="tech-name">Contribute:</span> Help improve this website by contributing</div>
+    </div>
+    <div class="tech">
+        <RouterLink to="/about" exact class="link-a">About</RouterLink>
+        <div class="tooltip"><span class="tech-name">About:</span> Learn more about me</div>
+    </div>
+    <div class="tech">
+        <RouterLink to="/projects" exact class="link-a">Projects</RouterLink>
+        <div class="tooltip"><span class="tech-name">Projects:</span> View my projects</div>
+    </div>
+    <div class="tech">
+        <RouterLink to="/uses" exact class="link-a">Uses</RouterLink>
+        <div class="tooltip"><span class="tech-name">Uses:</span> See the tools I use</div>
+    </div>
+</div>
+
             <div class="copyright">
                 &copy; Copyright <strong><span>ZAHIN</span></strong> 2024 • Got any feedback?
             </div>
@@ -115,5 +147,12 @@ document.addEventListener('keydown', function(e) {
 .active-link {
     color: var(--theme); /* Example active link color */
     font-weight: bold; /* Example active link font weight */
+}
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    list-style: none;
+    margin-top: -40px;
 }
 </style>
