@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Page Head -->
       <div class="row page-head gap-2">
-        <h1 class="text-white fw-bold text-green-800">Project</h1>
+        <h1 class="white-head fw-bold text-green-800">Project</h1>
         <p>The list of my projects. Everything was made with <span style="color: var(--rad);">❤️</span>.</p>
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
@@ -43,8 +43,8 @@
                       </div>
                     </div>
                     <div class="project-card__info">
-                      <h2 class="text-white">{{ truncate(project.title, 50) }}</h2>
-                      <span class="text-white mb-2">{{ project.date }}</span>
+                      <h2 class="white-head">{{ truncate(project.title, 50) }}</h2>
+                      <span class="white-head mb-2">{{ project.date }}</span>
                       <p>{{ truncate(project.excerpt, 100) }}</p>
                       <p>
                         <a :href="project.link" class="language" target="_blank">

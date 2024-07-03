@@ -3,18 +3,18 @@
     <div class="container">
       <!-- Page Head -->
       <div class="row page-head gap-2">
-        <h1 class="text-white fw-bold text-green-800">About</h1>
+        <h1 class="white-head fw-bold text-green-800">About</h1>
         <p>👋 Hello! Assalamualikum; I'm Zahin, a passionate programmer who loves coding and tea.</p>
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
       <div class="w-100">
-        <h3 class="scroll-m-32 text-white text-decoration-none theme-color"><a href="#how-am-i">WHO AM I</a></h3>
-        <p>I am a professional software engineer from Bangladesh, currently 21 years old, specializing in Laravel, Vue.js, Pest, Selenium, Puppeteer, and database management. My passion lies in mastering software testing techniques and game development.</p>
-        <p>I embarked on my programming journey at the age of 15 and pursued formal education in computer science starting in 2019. While initially a hobby, I have honed my skills through extensive self-learning on platforms like YouTube. One of my preferred channels is <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@edurekaIN">edureka!</a>, where I have gained proficiency in various programming languages.</p>
-        <p>I excel in utilizing <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://laravel.org/">Laravel</a> and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vuejs.org/">Vue.js</a> to develop sophisticated websites. I leverage <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com">GitHub</a> for code management and hosting, followed by deployment on platforms such as <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vercel.com">Vercel</a> and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://netlify.org/">Netlify</a>.</p>
+        <h3 class="scroll-m-32 white-head text-decoration-none theme-color"><a href="#how-am-i">WHO AM I</a></h3>
+        <p class="text-gray-400">I am a professional software engineer from Bangladesh, currently 21 years old, specializing in Laravel, Vue.js, Pest, Selenium, Puppeteer, and database management. My passion lies in mastering software testing techniques and game development.</p>
+        <p class="text-gray-400">I embarked on my programming journey at the age of 15 and pursued formal education in computer science starting in 2019. While initially a hobby, I have honed my skills through extensive self-learning on platforms like YouTube. One of my preferred channels is <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@edurekaIN">edureka!</a>, where I have gained proficiency in various programming languages.</p>
+        <p class="text-gray-400">I excel in utilizing <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://laravel.org/">Laravel</a> and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vuejs.org/">Vue.js</a> to develop sophisticated websites. I leverage <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com">GitHub</a> for code management and hosting, followed by deployment on platforms such as <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vercel.com">Vercel</a> and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://netlify.org/">Netlify</a>.</p>
       </div>
 
-      <h5 class="scroll-m-32 text-white text-decoration-none">What I'm Up To</h5>
+      <h5 class="scroll-m-32 white-head text-decoration-none">What I'm Up To</h5>
       <ul>
         <li class="text-gray-400">
           Currently employed as a Software Tester at 
@@ -32,7 +32,7 @@
         </li>
         <li class="text-gray-400">Continuously learning to enhance my skills and stay updated with the latest in technology.</li>
       </ul>
-      <h4 class="scroll-m-32 text-white text-decoration-none">Social links</h4>
+      <h4 class="scroll-m-32 white-head text-decoration-none">Social links</h4>
       <ul>
         <li class="text-gray-400"><a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://github.com/isherezahin">GitHub</a></li>
         <li class="text-gray-400"><a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/isherejahin/">Facebook</a></li>
@@ -41,7 +41,7 @@
         <li class="text-gray-400"><a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://youtube.com/@isherezahin">YouTube</a></li>
       </ul>
       
-      <h4 class="scroll-m-32 text-white text-decoration-none">Tech Stack</h4>
+      <h4 class="scroll-m-32 white-head text-decoration-none">Tech Stack</h4>
       <div class="tech-stack">
         <div class="tech">
             <img src="https://skillicons.dev/icons?i=vscode" alt="Visual Studio Code"/>
@@ -80,8 +80,8 @@
             <div class="tooltip"><span class="tech-name">Windows:</span> A group of several proprietary graphical operating system families developed by Microsoft.</div>
         </div>
       </div>
-      <h4 class="scroll-m-32 text-white text-decoration-none" style="margin-bottom: 4px;">Contact</h4>
-      <p>Do contact me if you need my opinion about software testing, web development, especially frontend works. <br>I’ll be happy to help! (find my Skype ID in the footer)</p>
+      <h4 class="scroll-m-32 white-head text-decoration-none" style="margin-bottom: 4px;">Contact</h4>
+      <p  class="text-gray-400">Do contact me if you need my opinion about software testing, web development, especially frontend works. <br>I’ll be happy to help! (find my Skype ID in the footer)</p>
     </div>
     </section>
 </template>

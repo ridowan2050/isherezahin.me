@@ -28,7 +28,7 @@
                                             <span class="blog-type">{{ blog.type }}</span>
                                             <span class="blog-date">{{ blog.fullDate }}</span>
                                         </div>
-                                        <h2 class="text-white">{{ truncate(blog.title, 50) }}</h2>
+                                        <h2 class="white-head">{{ truncate(blog.title, 50) }}</h2>
                                         <p style="color: var(--grey)">{{ truncate(blog.excerpt, 100) }}</p>
                                         <p>
                                             <a :href="blog.link" class="category"  target="blank">

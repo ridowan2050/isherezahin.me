@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Page Head -->
       <div class="row page-head gap-2">
-        <h1 class="text-white fw-bold text-green-800">Blog</h1>
+        <h1 class="white-head fw-bold text-green-800">Blog</h1>
         <p>On my personal website and blog, I share notes, articles, and various thoughts on different subjects, including personal experiences. As a programmer from Bangladesh, I started learning web development as a hobby in July 2019. I use Laravel and Vue.js to create websites, and for testing, I utilize Pest, Selenium, and Puppeteer. For code storage and hosting, I use GitHub, GitLab, Netlify, Vercel, etc. Explore my site to learn more about my journey and personal life, and discover some web development resources that have inspired me.</p>
       </div>
 
@@ -58,7 +58,7 @@
                       <span class="blog-type">{{ blog.type }}</span>
                       <span class="blog-date">{{ blog.fullDate }}</span>
                     </div>
-                    <h2 class="text-white">{{ truncate(blog.title, 50) }}</h2>
+                    <h2 class="white-head">{{ truncate(blog.title, 50) }}</h2>
                     <p style="color: var(--grey)">{{ truncate(blog.excerpt, 100) }}</p>
                     <p>
                       <a :href="blog.link" class="category" target="_blank">

@@ -2,7 +2,7 @@
   <div id="app">
     <section v-bind:class="{ 'fadeIn': animate }">
       <div class="row page-head gap-2" style="margin-top: 70px">
-        <h1 class="text-white fw-bold text-green-800">Uses</h1>
+        <h1 class="white-head fw-bold text-green-800">Uses</h1>
         <p>This is the equipment I currently use for gaming, programming, making videos, and every day.</p>
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
@@ -135,7 +135,7 @@
         </div>
         <div class="product-item">
           <div class="image">
-            <img src="../assets/img/uses/coding/Figma.png" alt="Figma" />
+            <img src="../assets/img/uses/coding/figma.png" alt="Figma" />
           </div>
           <p class="name">Figma</p>
           <p class="subname">Design</p>

@@ -4,14 +4,14 @@
             <div class="container">
                 <!-- Page Head -->
                 <div class="row page-head gap-2">
-                    <h1 class="text-white fw-bold text-green-800 theme-color">Website's Design</h1>
+                    <h1 class="white-head fw-bold text-green-800 theme-color">Website's Design</h1>
                     <p>This website was made with <span style="color: var(--rad);">❤️</span>. <br>I have mentioned all the languages and tools that I used to create this website on this page. The theme colors of this website are also listed.</p>
                     <hr class="bg-light" />
                 </div>
                 <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
                 <div class="content p-5">
                     <div class="row">
-                        <h3 class="scroll-m-32 text-white">Inspiration</h3>
+                        <h3 class="scroll-m-32 white-head">Inspiration</h3>
                         <p class="mb-5">
                             For this website Special thanks to 
                             <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://honghong.me/">Hong</a>, 
@@ -22,7 +22,7 @@
                         </p>
                     </div>
                     <div class="row">
-                        <h4 class="scroll-m-32 text-white text-decoration-none">Languages & Tools</h4>
+                        <h4 class="scroll-m-32 white-head text-decoration-none">Languages & Tools</h4>
                         <p>I was using this tool and language to build this website.</p>
                         <div class="tech-stack">
                             <div class="tech">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <h4 class="scroll-m-32 text-white text-decoration-none mt-5">Color Palette</h4>
+                        <h4 class="scroll-m-32 white-head text-decoration-none mt-5">Color Palette</h4>
                         <div class="row">
                             <div data-fade="2" class="mt-3 rounded p-4 border-2 border-dashed border-gray-300">
                                 <div class="flex items-end justify-between">
@@ -175,9 +175,6 @@
 }
 .p-2 {
     padding: 0.5rem;
-}
-.md\:p-2.5 {
-    padding: 0.625rem;
 }
 .focus\:outline-none {
     outline: none;

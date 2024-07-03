@@ -18,8 +18,8 @@
                             </div>
                             </div>
                             <div class="project-card__info">
-                            <h2 class="text-white">{{ truncate(project.title, 50) }}</h2>
-                            <span class="text-white mb-2">{{project.date}}</span>                            
+                            <h2 class="white-head">{{ truncate(project.title, 50) }}</h2>
+                            <span class="white-head mb-2">{{project.date}}</span>                            
                             <p>{{ truncate(project.excerpt, 100) }}</p>
                             <p>
                                 <a :href="project.link" class="language" target="_blank">
