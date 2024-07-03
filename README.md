@@ -2,7 +2,8 @@
 
 Welcome to my personal portfolio website repository! This project showcases my skills, projects, and experience in software engineering and web development. The website is built using Vue.js and features a responsive design, dark-light mode, and various sections highlighting my work and services.
 
-![Portfolio Website Preview](./public/assets/web/hero.jpg)
+![Portfolio Website Light MoodPreview](./public/assets/web/hero-white.png)
+![Portfolio Website Dark Mood Preview](./public/assets/web/hero.png)
 
 ## Features
 
