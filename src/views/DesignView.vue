@@ -48,7 +48,7 @@
                         <div class="row">
                             <div data-fade="2" class="mt-3 rounded p-4 border-2 border-dashed border-gray-300">
                                 <div class="flex items-end justify-between">
-                                    <h2 class="capitalize">Dark Mode</h2>
+                                    <h2 class="capitalize">Uses Color</h2>
                                     <button class="rounded-md border text-lg">
                                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -60,57 +60,49 @@
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 bg-white"></div>
                                         <div class="flex-col">
-                                            <p class="color-name">White Background</p>
-                                            <p class="color-code">#ffffff</p>
+                                            <p class="color-name">Light</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 bg-dark"></div>
                                         <div class="flex-col">
-                                            <p class="color-name">Dark Background</p>
-                                            <p class="color-code">#000000</p>
+                                            <p class="color-name">Dark</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 theme"></div>
                                         <div class="flex-col">
                                             <p class="color-name">Theme</p>
-                                            <p class="color-code">#00E6A5</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 border-color"></div>
                                         <div class="flex-col">
                                             <p class="color-name">Border</p>
-                                            <p class="color-code">#1e1e1e</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 text-color"></div>
                                         <div class="flex-col">
                                             <p class="color-name">Text Color</p>
-                                            <p class="color-code">#c2c2c2</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 blackly"></div>
                                         <div class="flex-col">
                                             <p class="color-name">Blackly</p>
-                                            <p class="color-code">#303133</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 danger"></div>
                                         <div class="flex-col">
                                             <p class="color-name">Danger</p>
-                                            <p class="color-code">Rad</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex items-center gap-2">
                                         <div class="h-10 w-10 rounded shadow-sm border border-gray-300 shrink-0 gradient"></div>
                                         <div class="flex-col">
                                             <p class="color-name">Gradient</p>
-                                            <p class="color-code">to right, #02a963, #00bfff</p>
                                         </div>
                                     </div>
                                 </div>
@@ -134,15 +126,10 @@
     padding: 1rem;
 }
 .color-name {
-    color: var(--white);
+    margin-top: 8px;
+    color: var(--text);
     font-size: 1rem;
     font-weight: 600;
-    display: block;
-}
-.color-code {
-    font-size: 12px;
-    color: var(--text);
-    margin-top: -17px;
     display: block;
 }
 .border-2 {

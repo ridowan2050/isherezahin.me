@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <h1 class="headline">About Me</h1>
-    <div class="row" style="border-top: 1px solid rgb(36, 36, 36);">
+    <div class="row" style="border-top: 1px solid var(--border)">
       <div class="col-md-6">
         <div class="location">
           <div class="row">
@@ -38,7 +38,7 @@
   </section>
   <section class="tools">
     <div class="row">
-      <div class="borderli col-lg-6">
+      <div class="col-lg-6">
         <div class="stacks">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap size-[18px]">
                 <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="icon-marquee">
-          <div class="flex flex-col overflow-hidden p-4">
+          <div class="borderli flex flex-col overflow-hidden p-4">
             <!-- Left Marquee Container -->
             <div class="flex justify-around gap-3 mb-3 first-marquee-container move-left-to-right">
               <img v-for="(icon, index) in firstMarqueeIcons" :key="index" :src="icon.src" :alt="icon.alt" class="size-10 icon">
@@ -740,7 +740,7 @@ export default {
 
 .borderli {
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid var(--blackly);
   border-radius: 10px;
   animation: fadeIn 0.5s ease-in;
 }
