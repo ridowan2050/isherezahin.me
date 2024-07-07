@@ -107,14 +107,42 @@
 <script>
 import appImage1 from '../assets/img/blog/blog1.jpg';
 import appImage2 from '../assets/img/blog/blog2.jpg';
+import appImage3 from '../assets/img/blog/blog3.jpg';
+import appImage4 from '../assets/img/blog/blog4.jpg';
 
 export default {
   name: 'BlogSection',
   data() {
     return {
       blogs: [
-        {
+      {
           id: 1,
+          day: '10',
+          month: 'May',
+          fullDate: 'May 10, 2024',
+          title: "A Beginner's Guide to Laravel Project Testing",
+          excerpt: 'As a budding Laravel developer, diving into the world of testing might seem daunting. But fear not! Robust testing practices are the cornerstone of any successful Laravel project, and this guide will equip you with the essentials to get started.',
+          image: appImage3,
+          link: 'https://www.linkedin.com/pulse/beginners-guide-laravel-project-testing-zahin--m31sc/?trackingId=aS4kq4FwR7WY7Q%2F70Ho1aw%3D%3D',
+          categories: ['Laravel', 'Testing'],
+          type: 'Article',
+          tags: ['Software', 'Article']
+        },
+        {
+          id: 2,
+          day: '26',
+          month: 'March',
+          fullDate: 'March 26, 2024',
+          title: "Mastering Laravel & Vue.js",
+          excerpt: 'The web development landscape is constantly evolving, and developers need to adapt to stay ahead of the curve. Two powerful frameworks, Laravel (backend) and Vue.js (frontend), have emerged as popular choices for building dynamic and interactive web applications. Mastering this combination can significantly enhance your full-stack development skills and open doors to exciting job opportunities.',
+          image: appImage4,
+          link: 'https://www.linkedin.com/pulse/how-unlock-your-web-development-superpowers-mastering-abu-zahin-sycic/',
+          categories: ['Laravel', 'Vue'],
+          type: 'Article',
+          tags: ['Software', 'Article']
+        },
+        {
+          id: 3,
           day: '11',
           month: 'JUNE',
           fullDate: 'June 11, 2024',
@@ -127,7 +155,7 @@ export default {
           tags: ['Bangladesh', 'Programming', 'Web Development']
         },
         {
-          id: 2,
+          id: 4,
           day: '27',
           month: 'March',
           fullDate: 'March 27, 2023',
