@@ -113,8 +113,7 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
     Swal.fire({
         icon: 'warning',
-        title: 'Oops...',
-        text: 'Inspecting this page is not allowed!',
+         text: 'Inspecting this page is not allowed!',
         showClass: {
             popup: 'animate__animated animate__fadeInDown'
         },
@@ -141,6 +140,15 @@ document.addEventListener('keydown', function(e) {
         });
     }
 });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const shape = document.querySelector('.shape-3');
+        shape.style.opacity = '1';
+      }, 1500); // 1.5 seconds delay
+    });
 </script>
 
 <style scoped>

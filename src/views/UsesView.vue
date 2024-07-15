@@ -326,14 +326,4 @@ h2 {
     flex: 1 1 calc(16.67% - 20px); /* Six items per row */
   }
 }
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Apply fadeIn animation to sections */
-.laptop-section, section {
-  animation: fadeIn 0.5s ease-in-out;
-}
 </style>

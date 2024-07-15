@@ -210,29 +210,6 @@ export default {
 </script>
 
 <style scoped>
-.shape-3 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  animation: moving 20s linear infinite;
-}
-
-@media (max-width: 1000px) {
-  .shape-3 {
-    display: none;
-  }
-}
-
-@keyframes moving {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(30px);
-  }
-}
-
 .custom-input-group {
   display: flex;
   align-items: center;

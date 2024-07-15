@@ -125,8 +125,18 @@ h5,
 h6 {
   font-family: var(--font-primary);
 }
-.page-headline {
-  text-align: left;
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply fadeIn animation to sections */
+section {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.headline {
+  text-align: center;
   color: var(--text);
 }
 .page-head {
@@ -149,7 +159,9 @@ h6 {
   top: 0;
   right: 0;
   display: block;
-  animation: moving 20s linear infinite;
+  opacity: 0;
+  animation: moving 20s linear infinite 1.5s;
+  animation-fill-mode: forwards; /* Ensures the element stays visible after the delay */
 }
 
 @media (max-width: 1000px) {
@@ -161,6 +173,7 @@ h6 {
 @keyframes moving {
   0%, 100% {
     transform: translateY(0);
+    opacity: 1; /* Ensure the element is visible during the animation */
   }
   50% {
     transform: translateY(30px);
