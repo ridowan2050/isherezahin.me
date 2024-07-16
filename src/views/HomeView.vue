@@ -59,6 +59,7 @@
     <ProjectSection />
     <AboutMe />
     <BlogSection />
+    <AnyQuestion />
   </main>
 </template>
 
@@ -66,6 +67,7 @@
 import AboutMe from '../components/home/AboutMe.vue';
 import ProjectSection from '../components/home/ProjectSection.vue';
 import BlogSection from '../components/home/BlogSection.vue';
+import AnyQuestion from '../components/home/AnyQuestion.vue';
 </script>
 
 <style scoped>

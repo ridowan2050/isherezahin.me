@@ -108,38 +108,38 @@ import '../public/assets/vendor/glightbox/js/glightbox.min.js';
 import '../public/assets/vendor/php-email-form/validate.js';
 import '../public/assets/js/main.js';
 
-// Disable right-click
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    Swal.fire({
-        icon: 'warning',
-         text: 'Inspecting this page is not allowed!',
-        showClass: {
-            popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-        }
-    });
-});
+// //Disable right-click
+// document.addEventListener('contextmenu', function(e) {
+//     e.preventDefault();
+//     Swal.fire({
+//         icon: 'warning',
+//          text: 'Inspecting this page is not allowed!',
+//         showClass: {
+//             popup: 'animate__animated animate__fadeInDown'
+//         },
+//         hideClass: {
+//             popup: 'animate__animated animate__fadeOutUp'
+//         }
+//     });
+// });
 
-// Disable F12, Ctrl+Shift+I, Ctrl+U
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
-        e.preventDefault();
-        Swal.fire({
-            icon: 'warning',
-            title: 'Oops...',
-            text: 'Inspecting this page is not allowed!',
-            showClass: {
-                popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-            }
-        });
-    }
-});
+// // Disable F12, Ctrl+Shift+I, Ctrl+U
+// document.addEventListener('keydown', function(e) {
+//     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+//         e.preventDefault();
+//         Swal.fire({
+//             icon: 'warning',
+//             title: 'Oops...',
+//             text: 'Inspecting this page is not allowed!',
+//             showClass: {
+//                 popup: 'animate__animated animate__fadeInDown'
+//             },
+//             hideClass: {
+//                 popup: 'animate__animated animate__fadeOutUp'
+//             }
+//         });
+//     }
+// });
 </script>
 
 <script>
