@@ -100,7 +100,7 @@ import '../public/assets/vendor/swiper/swiper-bundle.min.css';
 import '../public/assets/vendor/glightbox/css/glightbox.min.css';
 import '../public/assets/vendor/aos/aos.css';
 import '../public/assets/css/main.css'
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../public/assets/vendor/swiper/swiper-bundle.min.js';

@@ -4,10 +4,10 @@
             <div class="row gap-12">
                 <div class="col-md-6 relative size-64 max-md:mx-auto" ref="scope">
                     <img width="3975" height="3975" src="../../assets/img/qu.jpg" class="image" alt="Me sit in front of my desk and coding"/>
-                    <div class="selenium bottom-12 left-14 px-2">Selenium</div>
-                    <div class="vue-js left-2 top-20 px-2">Vue.js</div>
-                    <div class="laravel bottom-20 right-1 px-2">Laravel</div>
-                    <div class="ui-ux right-8 top-10 px-2">UI/UX</div>
+                    <div id="selenium" class="selenium bottom-12 left-14 px-2">Selenium</div>
+                    <div id="vue-js" class="vue-js left-2 top-20 px-2">Vue.js</div>
+                    <div id="laravel" class="laravel bottom-20 right-1 px-2">Laravel</div>
+                    <div id="ui-ux" class="ui-ux right-8 top-10 px-2">UI/UX</div>
         
                     <div id="pointer" class="absolute">
                         <svg width="16.8" height="18.2" viewBox="0 0 12 13" class="fill-red-500" stroke="white" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
@@ -37,10 +37,36 @@
         </div>
     </div>
 </template>
+<!-- <script>
+export default {
+  mounted() {
+    const pointer = this.$refs.scope.querySelector('#pointer');
+    const skills = ['selenium', 'vue-js', 'laravel', 'ui-ux'];
 
+    skills.forEach(skill => {
+      const element = this.$refs.scope.querySelector(`#${skill}`);
+      element.addEventListener('mouseover', (e) => this.movePointer(e, pointer));
+    });
+  },
+  methods: {
+    movePointer(event, pointer) {
+        const skill = event.target;
+        const rect = skill.getBoundingClientRect();
+        const pointerRect = pointer.getBoundingClientRect();
+
+        // Calculate the fixed position to move the pointer to
+        const top = rect.top + (rect.height / 2) - (pointerRect.height / 2) - 315;
+        const left = rect.left + (rect.width / 2) - (pointerRect.width / 2) - 420;
+
+        pointer.style.transform = `translate(${left}px, ${top}px)`;
+    }
+    }
+}
+</script> -->
 <style scoped>
 .image {
     position: absolute;
+    right: auto;
     left: 50%;
     top: 48%;
     transform: translate(-50%, -50%);
@@ -90,6 +116,7 @@
 
 .absolute {
     position: absolute;
+    transition: transform 0.5s ease;
 }
 
 .left-1\/2 {
@@ -143,6 +170,35 @@
     position: absolute;
     cursor: pointer;
     color: var(--white);
+    transition: all 0.5s ease;
+}
+
+.selenium:hover {
+    opacity: 1;
+    color: #00bb00;
+    background-color: rgba(0, 187, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.vue-js:hover {
+    opacity: 1;
+    color: #42b883;
+    background-color: rgba(66, 184, 131, 0.1);
+    transform: scale(1.1);
+}
+
+.laravel:hover {
+    opacity: 1;
+    color: #ff2d20;
+    background-color: rgba(255, 45, 32, 0.1);
+    transform: scale(1.1);
+}
+
+.ui-ux:hover {
+    opacity: 1;
+    color: #1d4ed8;
+    background-color: rgba(29, 78, 216, 0.1);
+    transform: scale(1.1);
 }
 
 .left-2 {
