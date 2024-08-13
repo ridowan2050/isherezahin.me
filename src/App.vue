@@ -12,6 +12,7 @@
                     <li><RouterLink to="/about" exact-active-class="active-link">About</RouterLink></li>
                     <li><RouterLink to="/project" exact-active-class="active-link">Project</RouterLink></li>
                     <li><RouterLink to="/blog" exact-active-class="active-link">Blog</RouterLink></li>
+                    <li><RouterLink to="/bd-anti-discrimination-student-movement" exact-active-class="active-link">BD-24</RouterLink></li>
                     <li><RouterLink to="/services" exact-active-class="active-link">Services</RouterLink></li>
                     <li><RouterLink to="/uses" exact-active-class="active-link">Uses</RouterLink></li>
                 </ul>
@@ -60,6 +61,10 @@
                 <div class="tech">
                     <RouterLink to="/project" exact class="link-a">Projects</RouterLink>
                     <div class="tooltip"><span class="tech-name">Projects:</span> View my projects</div>
+                </div>
+                <div class="tech">
+                    <RouterLink to="/bd-anti-discrimination-student-movement" exact class="link-a">BD-24</RouterLink>
+                    <div class="tooltip"><span class="tech-name">BD-24:</span>The Bangladesh Anti-Discrimination Student Movement is a student-led initiative advocating for equality and fighting against discrimination in educational institutions and society.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/uses" exact class="link-a">Uses</RouterLink>
