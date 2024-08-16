@@ -1,4 +1,5 @@
 <template>
+    <SpeedInsights />
     <!-- ======= Header ======= -->
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -98,7 +99,8 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import { SpeedInsights } from '@vercel/speed-insights/vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../public/assets/vendor/swiper/swiper-bundle.min.css';
