@@ -4,7 +4,7 @@
       <!-- Page Head -->
       <div class="row page-head gap-2">
         <h1 class="white-head fw-bold text-green-800">Blog</h1>
-        <p>On my personal website and blog, I share notes, articles, and various thoughts on different subjects, including personal experiences. As a programmer from Bangladesh, I started learning web development as a hobby in July 2019. I use Laravel and Vue.js to create websites, and for testing, I utilize Pest, Selenium, and Puppeteer. For code storage and hosting, I use GitHub, GitLab, Netlify, Vercel, etc. Explore my site to learn more about my journey and personal life, and discover some web development resources that have inspired me.</p>
+        <p>On my personal website and blog, I share notes, articles, and various thoughts on different subjects, including personal experiences.</p>
       </div>
 
       <!-- Search and Filters -->
@@ -29,59 +29,44 @@
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
       <!-- Blog Cards -->
-      <div class="row">
-        <div class="col-md-6" v-for="blog in paginatedBlogs" :key="blog.id">
-          <div class="container mt-5">
-            <div class="row flex-column-reverse flex-md-row justify-content-between gap-4">
-              <div class="col-12">
-                <article class="blog-card">
-                  <!-- Blog Card Background -->
-                  <div class="blog-card__background">
-                    <div class="card__background--wrapper">
-                      <div class="card__background--main" :style="{ backgroundImage: `url(${blog.image})` }">
-                        <div class="card__background--layer"></div>
-                      </div>
+      <div class="row blog-posts">
+        <div class="container">
+            <div class="row gy-4">
+              <div class="col-md-6 col-lg-4" v-for="blog in paginatedBlogs" :key="blog.id">
+                    <div class="post-entry" data-aos-delay="100">
+                        <a href="#" class="thumb d-block">
+                            <img :src="blog.image" alt="Blog Image" class="img-fluid rounded">
+                        </a>
+                        <div class="post-content">
+                            <div class="meta">
+                                <a href="#" class="cat">{{ blog.type }}</a> •
+                                <span class="date">{{ blog.date }}</span>
+                            </div>
+                            <h3>
+                              <a :href="blog.link" target="blank">{{ truncate(blog.title, 50) }}</a>
+                            </h3>
+                            <p>{{ truncate(blog.excerpt, 100) }}</p>
+                            <div class="d-flex author align-items-center">
+                                <div class="pic">
+                                    <img :src="blog.writerimage" alt="Writer Image" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="author-name">
+                                    <strong class="d-block">{{ blog.writername }}</strong>
+                                    <span>{{ blog.writerdesignation }}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-
-                  <!-- Blog Card Head -->
-                  <div class="blog-card__head">
-                    <span class="date__box">
-                      <span class="date__day">{{ blog.day }}</span>
-                      <span class="date__month">{{ blog.month }}</span>
-                    </span>
-                  </div>
-
-                  <!-- Blog Card Info -->
-                  <div class="blog-card__info">
-                    <div class="blog-details">
-                      <span class="blog-type">{{ blog.type }}</span>
-                      <span class="blog-date">{{ blog.fullDate }}</span>
-                    </div>
-                    <h2 class="white-head">{{ truncate(blog.title, 50) }}</h2>
-                    <p style="color: var(--grey)">{{ truncate(blog.excerpt, 100) }}</p>
-                    <p>
-                      <a :href="blog.link" class="category" target="_blank">
-                        <span v-for="category in blog.categories" :key="category">{{ category }}</span>
-                      </a>
-                    </p>
-                    <a :href="blog.link" class="btn btn--with-icon" target="_blank">
-                      <i class="btn-icon fa fa-long-arrow-right"></i>READ MORE
-                    </a>
-                  </div>
-                </article>
-              </div>
+                </div>
+                <div v-if="filteredBlogs.length === 0" class="col-12 text-center mt-5">
+                  <p>
+                    <span :style="{ color: 'var(--rad)' }">{{ searchQuery }}</span> not found. 
+                    You can read my old page article 
+                    <RouterLink to="/article" exact-active-class="active-link">Article</RouterLink>
+                  </p>
+                </div>
+                <!-- Not Found Message -->
             </div>
-          </div>
-        </div>
-
-        <!-- Not Found Message -->
-        <div v-if="filteredBlogs.length === 0" class="col-12 text-center mt-5">
-          <p>
-            <span :style="{ color: 'var(--rad)' }">{{ searchQuery }}</span> not found. 
-            You can read my old page article 
-            <RouterLink to="/article" exact-active-class="active-link">Article</RouterLink>
-          </p>        
         </div>
       </div>
 
@@ -105,67 +90,90 @@
 </template>
 
 <script>
-import appImage1 from '../assets/img/blog/blog1.jpg';
-import appImage2 from '../assets/img/blog/blog2.jpg';
-import appImage3 from '../assets/img/blog/blog3.jpg';
-import appImage4 from '../assets/img/blog/blog4.jpg';
+import blogImage1 from '../assets/img/blog/blog1.jpg';
+import writerImage1 from '../assets/img/me/profile-img.jpg';
+
+import blogImage2 from '../assets/img/blog/blog2.jpg';
+import writerImage2 from '../assets/img/me/profile-img.jpg';
+
+import blogImage3 from '../assets/img/blog/blog3.jpg';
+import writerImage3 from '../assets/img/me/profile-img.jpg';
+
+import blogImage4 from '../assets/img/blog/blog4.jpg';
+import writerImage4 from '../assets/img/me/manavatar.jpg';
+
+import blogImage5 from '../assets/img/blog/blog5.jpg';
+import writerImage5 from '../assets/img/me/profile-img.jpg';
 
 export default {
   name: 'BlogSection',
   data() {
     return {
       blogs: [
-      {
-          id: 1,
-          day: '10',
-          month: 'May',
-          fullDate: 'May 10, 2024',
-          title: "A Beginner's Guide to Laravel Project Testing",
-          excerpt: 'As a budding Laravel developer, diving into the world of testing might seem daunting. But fear not! Robust testing practices are the cornerstone of any successful Laravel project, and this guide will equip you with the essentials to get started.',
-          image: appImage3,
-          link: 'https://www.linkedin.com/pulse/beginners-guide-laravel-project-testing-zahin--m31sc/?trackingId=aS4kq4FwR7WY7Q%2F70Ho1aw%3D%3D',
-          categories: ['Laravel', 'Testing'],
-          type: 'Article',
-          tags: ['Software', 'Article']
+        {
+            id: 1,
+            date: 'August 17, 2024',
+            title: 'Anti-discrimination Students Movement',
+            excerpt: 'The Anti-discrimination Students Movement is a student organization in Bangladesh that was formed during the 2024 Bangladesh quota reform movement. The group led the movement advocating for anti-discrimination policies.',
+            image: blogImage1,
+            link: '/bd-anti-discrimination-student-movement',
+            type: 'Article',
+            categories: ['Movement', 'Students', 'power', 'Article'],
+            writerimage: writerImage1,
+            writername: 'Abu Zahin',
+            writerdesignation: 'SQA Engineer',
         },
         {
-          id: 2,
-          day: '26',
-          month: 'March',
-          fullDate: 'March 26, 2024',
-          title: "Mastering Laravel & Vue.js",
-          excerpt: 'The web development landscape is constantly evolving, and developers need to adapt to stay ahead of the curve. Two powerful frameworks, Laravel (backend) and Vue.js (frontend), have emerged as popular choices for building dynamic and interactive web applications. Mastering this combination can significantly enhance your full-stack development skills and open doors to exciting job opportunities.',
-          image: appImage4,
-          link: 'https://www.linkedin.com/pulse/how-unlock-your-web-development-superpowers-mastering-abu-zahin-sycic/',
-          categories: ['Laravel', 'Vue'],
-          type: 'Article',
-          tags: ['Software', 'Article']
+            id: 2,
+            date: 'March 26, 2024',
+            title: 'Mastering Laravel & Vue.js',
+            excerpt: 'The web development landscape is constantly evolving, and developers need to adapt to stay ahead of the curve. Two powerful frameworks, Laravel (backend) and Vue.js (frontend), have emerged as popular choices for building dynamic and interactive web applications. Mastering this combination can significantly enhance your full-stack development skills and open doors to exciting job opportunities.',
+            image: blogImage2,
+            link: 'https://www.linkedin.com/pulse/how-unlock-your-web-development-superpowers-mastering-abu-zahin-sycic/',
+            type: 'Article',
+            categories: ['laravel', 'Vue', 'Article'],
+            writerimage: writerImage2,
+            writername: 'Abu Zahin',
+            writerdesignation: 'SQA Engineer',
         },
         {
-          id: 3,
-          day: '11',
-          month: 'JUNE',
-          fullDate: 'June 11, 2024',
-          title: 'The impure can never equal the pure.',
-          excerpt: 'যেসব পুরুষেরা কোনো নারীর নোংরা অতীতকে ভুলে গিয়ে তাকে মেনে নেওয়ার মন মানসিকতা রাখে সেসব পুরুষেরা সুস্পষ্টভাবে ক্ষমাশীল হলেও নিঃসন্দেহে তাদের মধ্যে গায়রত আর আত্মসম্মানবোধের অভাব আছে।',
-          image: appImage1,
-          link: '#',
-          categories: ['Purity', 'Integrity', 'Article'],
-          type: 'Article',
-          tags: ['Bangladesh', 'Programming', 'Web Development']
+            id: 3,
+            date: 'May 10, 2024',
+            title: "A Beginner's Guide to Laravel Project Testing",
+            excerpt: 'As a budding Laravel developer, diving into the world of testing might seem daunting. But fear not! Robust testing practices are the cornerstone of any successful Laravel project, and this guide will equip you with the essentials to get started.',
+            image: blogImage3,
+            link: 'https://www.linkedin.com/pulse/beginners-guide-laravel-project-testing-zahin--m31sc/',
+            type: 'Article',
+            categories: ['testing', 'Article'],
+            writerimage: writerImage3,
+            writername: 'Abu Zahin',
+            writerdesignation: 'SQA Engineer',
         },
         {
-          id: 4,
-          day: '27',
-          month: 'March',
-          fullDate: 'March 27, 2023',
-          title: 'Past experiences shaping present journey anew',
-          excerpt: 'In 2020, I endured the most agonizing experience of my life, a moment that forever altered my perspective.',
-          image: appImage2,
-          link: 'https://www.facebook.com/100062477031346/videos/766194744780592',
-          categories: ['Life', 'Blog'],
-          type: 'Video',
-          tags: ['Life Lessons', 'Personal Growth']
+            id: 4,
+            date: 'June 11, 2024',
+            title: "The impure can never equal the pure.",
+            excerpt: 'যেসব পুরুষেরা কোনো নারীর নোংরা অতীতকে ভুলে গিয়ে তাকে মেনে নেওয়ার মন মানসিকতা রাখে সেসব পুরুষেরা সুস্পষ্টভাবে ক্ষমাশীল হলেও নিঃসন্দেহে তাদের মধ্যে গায়রত আর আত্মসম্মানবোধের অভাব আছে।',
+            image: blogImage4,
+            link: '#',
+            type: 'Article',
+            categories: ['Purity', 'Integrity', 'Article'],
+            writerimage: writerImage4,
+            writername: 'Be Real Man',
+            writerdesignation: 'Social Writer',
+        },
+        {
+            id: 5,
+            date: 'March 27, 2023',
+            title: "Past experiences shaping present journey anew",
+            excerpt: 'In 2020, I endured the most agonizing experience of my life, a moment that forever altered my perspective.',
+            image: blogImage5,
+            link: '#',
+            type: 'Video',
+            categories: ['Life', 'Blog'],
+            writerimage: writerImage5,
+            writername: 'Abu Zahin',
+            writerdesignation: 'SQA Engineer',
         },
         // Add more blog data as needed
       ],
@@ -179,17 +187,12 @@ export default {
       if (!this.searchQuery) {
         return this.blogs;
       }
-      const queryWords = this.searchQuery.toLowerCase().split(' ');
+      const query = this.searchQuery.toLowerCase();
       return this.blogs.filter(blog => {
-        return queryWords.every(word => {
-          return blog.title.toLowerCase().includes(word) ||
-                blog.categories.some(category => category.toLowerCase().includes(word)) ||
-                blog.type.toLowerCase().includes(word) ||
-                blog.month.toLowerCase().includes(word) ||
-                blog.day.includes(word) ||
-                blog.fullDate.toLowerCase().includes(word) ||
-                blog.tags.some(tag => tag.toLowerCase().includes(word));
-        });
+        return blog.title.toLowerCase().includes(query) ||
+              blog.categories.some(category => category.toLowerCase().includes(query)) ||
+              blog.type.toLowerCase().includes(query) ||
+              blog.date.toLowerCase().includes(query);
       });
     },
     paginatedBlogs() {
@@ -210,6 +213,9 @@ export default {
 </script>
 
 <style scoped>
+.filters {
+  padding-bottom: 20px;
+}
 .custom-input-group {
   display: flex;
   align-items: center;
@@ -252,151 +258,78 @@ export default {
     width: 100%;
   }
 }
-.date__box {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text);
-  border: 4px solid var(--text);
-  font-weight: bold;
-  padding: 5px 10px;
+
+.blog-posts .post-entry .thumb {
+  margin-bottom: 20px;
 }
-.date__day {
-  font-size: 22px;
+
+.blog-posts .post-entry .thumb img {
+  transition: 0.3s all ease;
 }
-.blog-card {
-  padding: 30px;
-  position: relative;
-  border: 1px solid var(--border);
-  transition: 300ms ease-in-out;
-  border-radius: 10px;
+
+.blog-posts .post-entry .thumb:hover img {
+  opacity: 0.8;
 }
-.blog-card:hover 
-.btn--with-icon i {
-  background: var(--theme);
+
+.blog-posts .post-entry .meta {
+  font-size: 12px;
+  margin-bottom: 20px;
 }
-.date__box {
-  opacity: 0;
-  transform: scale(0.5);
-  transition: 300ms ease-in-out;
-}
-.blog-card__background,
-.card__background--layer {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.blog-card__background {
-  padding: 15px;
-  background: transparent;
-}
-.card__background--wrapper {
-  height: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
-  position: relative;
-  overflow: hidden;
-}
-.card__background--main {
-  height: 100%;
-  position: relative;
-  transition: 300ms ease-in-out;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 10px;
-}
-.card__background--layer {
-  z-index: 0;
-  opacity: 0;
-  background: rgba(51, 51, 51, 0.9);
-  transition: 300ms ease-in-out;
-}
-.blog-card__head {
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.blog-card__info {
-  z-index: 10;
-  background: var(--color-bg);
-  padding: 20px 15px;
-}
-.blog-card__info h2 {
+
+.blog-posts .post-entry .meta .cat {
   text-transform: uppercase;
+  font-weight: normal;
+  color: var(--color-text);
 }
-.blog-card:hover .date__box {
-  opacity: 1;
-  transform: scale(1);
+
+.blog-posts .post-entry .meta .date {
+  color: color-mix(in srgb, var(--color-text), transparent 25%);
 }
-.blog-card:hover .card__background--main {
-  transform: scale(1.2) rotate(5deg);
+
+.blog-posts .post-entry .post-content {
+  padding-left: 30px;
+  padding-right: 30px;
 }
-.blog-card:hover .card__background--layer {
-  opacity: 1;
-  cursor: help;
+
+.blog-posts .post-entry .post-content h3 {
+  font-size: 18px;
+  line-height: 1.2;
 }
-.category span {
-  display: inline-block;
-  background-color: var(--blackly);
-  color: var(--text);
-  padding: 5px 10px;
-  margin-right: 5px;
-  border-radius: 5px;
-  font-size: 0.85em;
-  transition: background-color 300ms ease;
+
+.blog-posts .post-entry .post-content h3 a {
+  color: var(--color-text);
 }
-.category span:hover {
-  background-color: var(--border);
+
+.blog-posts .post-entry .post-content h3 a:hover {
+  color: var(--color-border-hover);
 }
-.blog-details {
-  margin-bottom: 10px;
-  font-size: 0.9em;
-  color: var(--grey);
+
+.blog-posts .post-entry .post-content p{
+  font-size: 15px;
+  color: var(--color-background-soft);
+  padding-left: 5px;
+  padding-right: 5px;
 }
-.blog-type {
-  font-weight: bold;
-  margin-right: 10px;
+
+.blog-posts .author .pic {
+  flex: 0 0 50px;
+  margin-right: 20px;
 }
-.btn {
-  background: var(--color-bg);
-  color: var(--text);
-  font-weight: bold;
-  outline: none;
-  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  border-radius: 0;
-  height: 50px;
-  line-height: 50px;
-  display: inline-block;
-  padding: 0;
-  border: none;
+
+.blog-posts .author .author-name {
+  line-height: 1.3;
 }
-.btn:focus {
-  box-shadow: none;
+
+.blog-posts .author .author-name strong {
+  color: var(--color-text);
+  font-weight: normal;
 }
-.btn:hover {
-  color: var(--theme);
+
+.blog-posts .author .author-name span {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--color-text), transparent 25%);
 }
-.btn--with-icon {
-  padding-right: 20px;
-}
-.btn--with-icon i {
-  padding: 0px 30px 0px 15px;
-  margin-right: 10px;
-  height: 50px;
-  line-height: 50px;
-  vertical-align: bottom;
-  background: var(--text);
-  clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
-}
-.btn--only-icon {
-  width: 50px;
-}
+
 .page-pagination {
   display: flex;
   justify-content: space-between;

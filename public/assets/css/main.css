@@ -137,6 +137,7 @@ section {
 
 .headline {
   text-align: center;
+  padding: 30px;
   color: var(--text);
 }
 .page-head {
