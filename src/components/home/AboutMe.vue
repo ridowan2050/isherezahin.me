@@ -739,8 +739,9 @@ export default {
 }
 
 .borderli {
+  margin-top: 10px;
   padding: 20px;
-  border: 1px solid var(--blackly);
+  border: 1px solid var(--border);
   border-radius: 10px;
   animation: fadeIn 0.5s ease-in;
 }

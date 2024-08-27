@@ -191,11 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
     color: var(--theme); /* Example active link color */
     font-weight: bold; /* Example active link font weight */
 }
-.footer-nav {
+.tech-stack {
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
     justify-content: center;
-    padding: 40px;
-    list-style: none;
-    margin-top: -40px;
+    margin: 10px 0;
 }
 </style>

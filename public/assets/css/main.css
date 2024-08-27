@@ -1246,6 +1246,8 @@ section {
 }
 
 .footer .copyright {
+  margin-top: 30px;
+  margin-bottom: -10px;
   text-align: center;
   color: var(--text);
 }

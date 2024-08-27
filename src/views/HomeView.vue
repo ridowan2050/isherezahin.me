@@ -42,7 +42,7 @@
 
       <figure class="hero-banner" data-reveal="left">
         <div class="img-holder has-before">
-          <img src="../assets/img/home/about-banner.jpg" loading="lazy" alt="Zahin" class="img-cover">
+          <img src="../assets/img/me/home-image.jpg" loading="lazy" alt="Zahin" class="img-cover">
         </div>
         <div class="shape shape-1">
           <img src="../assets/img/home/about-shape-1.png" loading="lazy" alt="" class="shape-image">

@@ -48,6 +48,11 @@ const routes = [
     component: () => import('../views/MovementView.vue')
   },
   {
+    path: '/bd-anti-discrimination-student-movement/images',
+    name: 'bd-anti-discrimination-student-movement-images',
+    component: () => import('../views/MovementImagesView.vue')
+  },
+  {
     // Catch-all 404 - this will match any route not defined above
     path: '/:pathMatch(.*)*',
     name: '404',
