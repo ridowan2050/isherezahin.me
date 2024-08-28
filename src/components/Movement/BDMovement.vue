@@ -292,7 +292,9 @@
                   <p><span class="date-highlight">৭ আগস্ট</span> রাষ্ট্রপতির সাথে তিন বাহিনী প্রধান ও বৈষম্যবিরোধী ছাত্র আন্দোলনের সমন্বয়কদের বৈঠকের পর মুহাম্মদ ইউনূসকে প্রধান করে অন্তর্বর্তীকালীন সরকার গঠনের সিদ্ধান্ত নেওয়া হয়।</p>
                   
                   <p><span class="date-highlight">৮ আগস্ট</span> শপথগ্রহণের মাধ্যমে বাংলাদেশের অন্তর্বতীকালীন সরকার গঠন করা হয়। নতুন এই সরকারে ১৭ জন উপদেষ্টা রয়েছেন, যাদের মধ্যে বৈষম্যবিরোধী ছাত্র আন্দোলনের সমন্বয়ক নাহিদ ইসলাম ও আসিফ মাহমুদও রয়েছেন।</P>
-                </div>
+
+                  <p>If you want to see the touching images of the moment, please <RouterLink to="/bd-movement-media" class="tech-color">click here</RouterLink>.</p>
+                  </div>
 
               </div>
               <!-- End post content -->
