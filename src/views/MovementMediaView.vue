@@ -3,8 +3,7 @@
     <div class="container">
       <div class="row page-head gap-2">
         <h1 class="white-head fw-bold text-green-800">Movement Images and Videos</h1>
-        <p>On this page, you will find a collection of images and videos documenting significant moments of the Bangladesh Anti-Discrimination Student Movement.</p>
-        <p><span class="clause-highlight">Alert:</span> Viewer discretion is advised. The content on this page includes intense and distressing images and videos related to the movement.</p>
+        <p><span class="clause-highlight">Alert:</span> On this page, you will find a collection of images and videos documenting significant moments of the Bangladesh Anti-Discrimination Student Movement. Viewer discretion is advised. The content on this page includes intense and distressing images and videos related to the movement.</p>
       </div>
 
       <div class="row filters mt-4">
@@ -54,6 +53,16 @@
 </template>
 
 <script>
+import image18 from '../assets/BD-24/images/457090035_2667904140061487_1037408914244065018_n.jpg';
+import image19 from '../assets/BD-24/images/457212695_1174923047130265_6082460985402124078_n.jpg';
+import image20 from '../assets/BD-24/images/456962683_2667904166728151_4790298147037831703_n.jpg';
+import image21 from '../assets/BD-24/images/457326061_806735374956183_470323408847748992_n.jpg';
+
+
+
+import video1 from '../assets/BD-24/videos/রংপুরে সংঘর্ষের মাঝে গুলিতে নিহত শিক্ষার্থী আবু সাঈদ - Abu Sayed - Quota Andolon - JamunaTV.mp4';
+import video20 from '../assets/BD-24/videos/আমরা আমাদের ভাই আবু সাঈদের কথা জানি ৷ কিন্তু কাজল ভাইয়ের মতো এমন শত শত ভাইয়ের কথা আমরা এখনো জানিনা ৷.mp4';
+
 export default {
   data() {
     return {
@@ -61,47 +70,17 @@ export default {
       tagSearchQuery: '',
       selectedTags: [],
       items: [
-      { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 1', tags: ['protest', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 2', tags: ['rally', 'student'] },
-        { type: 'image', src: '/src/assets/img/me/home-image.jpg', alt: 'Movement Image 3', tags: ['protest', 'student', 'nextjs', 'react', 'css', 'tailwindcss', 'retro', 'flexbox', 'design', 'tips', 'grid', 'tools', 'vite', 'core-concept', 'git', 'pattern', 'typescript', 'setup', 'form', 'swift', 'javascript', 'html'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 1', tags: ['protest', 'rally'] },
-        { type: 'video', src: '/src/assets/BD-24/videos/video1.mp4', alt: 'Movement Video 2', tags: ['rally'] },
+        { type: "video", src: video1, alt: 'Movement Video 4', tags: ['abusayed','1stsahid'] },
+        { type: "image", src: image20, alt: 'Movement Image 3', tags: ['student', 'sohan', 'july19', 'rumpur', 'spinalcord',] },
+        { type: "image", src: image18, alt: 'Movement Image 1', tags: ['student', 'sohan', 'july19', 'rumpur', 'spinalcord',] },
+        { type: "image", src: image21, alt: 'Movement Image 2', tags: ['student','fayaz','remand'] },
+        { type: "image", src: image19, alt: 'Movement Image 2', tags: ['student','fayaz','remand'] },
+        { type: "video", src: video20, alt: 'Movement Video 4', tags: ['kajol'] },
+
+
+        // Add more items with tags here
       ],
+      observer: null
     };
   },
   computed: {
@@ -141,41 +120,37 @@ export default {
       video.muted = true;
       video.controls = false;
     },
-    setupIntersectionObserver() {
-      const options = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.5, // Trigger when 50% of the video is visible
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          const video = entry.target;
-
-          if (entry.isIntersecting) {
-            video.muted = false;
-            video.play();
-          } else {
-            video.pause();
-          }
-        });
-      }, options);
-
-      this.$nextTick(() => {
-        this.$refs['video'].forEach(video => {
-          if (video) {
-            observer.observe(video);
-          }
-        });
+    handleIntersection(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          entry.target.pause();
+        }
       });
-    },
+    }
   },
   mounted() {
-    this.setupIntersectionObserver();
+    // Initialize Intersection Observer
+    this.observer = new IntersectionObserver(this.handleIntersection, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5 // Adjust as needed
+    });
+
+    // Observe each video element
+    this.$nextTick(() => {
+      this.$refs.videos.forEach(video => this.observer.observe(video));
+    });
   },
+  beforeDestroy() {
+    // Clean up the observer
+    if (this.observer) {
+      this.$refs.videos.forEach(video => this.observer.unobserve(video));
+    }
+  }
 };
 </script>
-
 
 <style scoped>
 .custom-input-group {
@@ -236,7 +211,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 18px;
-  justify-items: center; /* Center items horizontally */
 }
 
 .item {
@@ -244,8 +218,6 @@ export default {
   overflow: hidden;
   border-radius: 10px;  
   transition: transform 0.3s ease;
-  width: 100%; /* Make items take full width of the grid column */
-  max-width: 100%; /* Ensure items do not exceed their grid column */
 }
 
 .item:hover {
@@ -301,7 +273,6 @@ export default {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.5rem;
-  justify-content: center; /* Center tags horizontally */
 }
 
 .tags span {
