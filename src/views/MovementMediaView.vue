@@ -60,8 +60,8 @@ import image21 from '../assets/BD-24/images/457326061_806735374956183_4703234088
 
 
 
-import video1 from '../assets/BD-24/videos/রংপুরে সংঘর্ষের মাঝে গুলিতে নিহত শিক্ষার্থী আবু সাঈদ - Abu Sayed - Quota Andolon - JamunaTV.mp4';
-import video20 from '../assets/BD-24/videos/আমরা আমাদের ভাই আবু সাঈদের কথা জানি ৷ কিন্তু কাজল ভাইয়ের মতো এমন শত শত ভাইয়ের কথা আমরা এখনো জানিনা ৷.mp4';
+import video1 from '../assets/BD-24/videos/Abu Sayed.mp4';
+import video20 from '../assets/BD-24/videos/কাজল.mp4';
 
 export default {
   data() {
