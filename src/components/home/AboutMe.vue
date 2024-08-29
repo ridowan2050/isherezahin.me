@@ -11,7 +11,7 @@
           </div>
           <div class="row">
             <div class="map">
-              <img src="../../assets/img/home/map.png" alt="Bangladesh" height="200px" class="img-fluid">
+              <img src="../../assets/img/map.png" alt="Bangladesh" height="200px" class="img-fluid">
             </div>
           </div>
         </div>
@@ -763,7 +763,7 @@ export default {
   width: auto;
   margin: auto;
   display: block;
-  animation: moving 6s linear infinite;
+  animation: moving 16s linear infinite;
 }
 
 @keyframes moving {
