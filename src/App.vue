@@ -13,7 +13,7 @@
                     <li><RouterLink to="/about" exact-active-class="active-link">About</RouterLink></li>
                     <li><RouterLink to="/project" exact-active-class="active-link">Project</RouterLink></li>
                     <li><RouterLink to="/blog" exact-active-class="active-link">Blog</RouterLink></li>
-                    <li><RouterLink to="/bd-anti-discrimination-student-movement" exact-active-class="active-link">BD-24</RouterLink></li>
+                    <li><RouterLink to="/guestbook" exact-active-class="active-link">GuestBook</RouterLink></li>
                     <li><RouterLink to="/services" exact-active-class="active-link">Services</RouterLink></li>
                     <li><RouterLink to="/uses" exact-active-class="active-link">Uses</RouterLink></li>
                 </ul>

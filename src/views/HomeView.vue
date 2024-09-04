@@ -34,6 +34,9 @@
                   <span class="tooltip"><span class="tooltip-text">Puppeteer:</span> A Node.js library for controlling headless Chrome or Chromium browsers.</span>
                 </span>, and database management to create impactful software applications.
               </p>
+              <p>
+                Don't forget to visit my  <span class="information-color"><RouterLink to="/guestbook" exact-active-class="active-link" style="color: var(--theme);">GuestBook</RouterLink></span>!
+              </p>
             </div>
           </div>
           <img src="../assets/img/home/signature.png" loading="lazy" alt="signature" class="img right">
@@ -109,7 +112,6 @@ import AnyQuestion from '../components/home/AnyQuestion.vue';
 
 .section-title {
   font-family: "IM Fell English SC", serif; 
-  /* margin-bottom: 70px; */
   font-size: 2rem;
   line-height: 1.3;
 }
