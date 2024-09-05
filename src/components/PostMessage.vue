@@ -38,7 +38,7 @@
     <div class="comments-list">
       <div v-for="message in messages" :key="message.id" class="comment">
         <div class="comment-header">
-          <img class="avatar" :src="message.gender === 'man' ? '../../public/manavatar.jpg' : '../../public/womanavatar.jpg'" alt="User Avatar">
+          <img class="avatar" :src="getAvatarUrl(message.gender)" alt="User Avatar">
           <div class="comment-info">
             <span class="comment-author">
               {{ message.name }}
@@ -117,8 +117,11 @@ export default {
     };
 
     const formatMessage = (message) => {
-      // Regex to identify URLs and replace them with HTML <a> tags
       return message.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" class="highlight-user-link" target="_blank">$1</a>');
+    };
+
+    const getAvatarUrl = (gender) => {
+      return gender === 'man' ? '/public/manavatar.jpg' : '/public/womanavatar.jpg';
     };
 
     return {
@@ -132,6 +135,7 @@ export default {
       messages,
       formatDate,
       formatMessage,
+      getAvatarUrl,
       isCommentFormVisible,
       toggleCommentForm,
       hideCommentForm,
