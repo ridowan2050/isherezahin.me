@@ -60,6 +60,9 @@
 import { ref, onMounted } from 'vue';
 import { db, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from '../firebase';
 
+import manavatar from '../../public/manavatar.jpg';
+import womanavatar from '../../public/womanavatar.jpg';
+
 export default {
   setup() {
     const userName = ref('');
@@ -121,7 +124,7 @@ export default {
     };
 
     const getAvatarUrl = (gender) => {
-      return gender === 'man' ? '/public/manavatar.jpg' : '/public/womanavatar.jpg';
+      return gender === 'man' ? manavatar : womanavatar;
     };
 
     return {
