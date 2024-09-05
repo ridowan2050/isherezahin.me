@@ -3,11 +3,7 @@
     
     <div class="custom-container">
       <div class="custom-header">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pin size-4" style="transform: rotate(30deg);">
-          <line x1="12" x2="12" y1="17" y2="22"></line>
-          <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path>
-        </svg>
-        Pinned
+        <!-- SVG and Header Content -->
       </div>
       <div>Thank you for visiting my website. I would greatly appreciate any feedback you might have on my work. Please feel free to leave a comment. Thank you!</div>
     </div>
@@ -19,6 +15,14 @@
 
     <div v-if="isCommentFormVisible" class="comment-form">
       <input v-model="userName" type="text" placeholder="Enter your name" class="form-input" required>
+      
+      <input v-model="githubUsername" type="text" placeholder="Enter your GitHub username (optional)" class="form-input">
+
+      <select v-model="gender" class="form-input">
+        <option value="man">Man</option>
+        <option value="woman">Woman</option>
+      </select>
+      
       <textarea v-model="message" placeholder="Write your message here..." class="form-textarea" required></textarea>
       <div class="post-btn">
         <button @click="postMessage" class="post-button" :disabled="isPostButtonDisabled">Post Comment</button>
@@ -30,19 +34,23 @@
     <div class="comments-list">
       <div v-for="message in messages" :key="message.id" class="comment">
         <div class="comment-header">
-          <img class="avatar" :src="message.avatar || defaultAvatar" alt="User Avatar">
+          <img class="avatar" :src="message.gender === 'man' ? '/src/assets/img/me/manavatar.jpg' : '/src/assets/img/me/womanavatar.jpg'" alt="User Avatar">
           <div class="comment-info">
-            <span class="comment-author">{{ message.name }}</span>
-            <span class="comment-timestamp">{{ formatDate(message.time) }}</span>
+            <span class="comment-author">
+              {{ message.name }}
+              <img v-if="message.verified === 1" src="/src/assets/img/testimonials/verified.png" height="22" width="22" alt="Verified" class="verified-icon">
+            </span>
+            <span v-if="message.githubUsername" class="github-username">@{{ message.githubUsername }}</span>
           </div>
+          <span class="comment-timestamp">{{ formatDate(message.time) }}</span>
         </div>
-        <div class="comment-body">
-          {{ message.message }}
+        <div class="comment-body" v-html="formatMessage(message.message)">
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import { ref, onMounted } from 'vue';
@@ -51,11 +59,12 @@ import { db, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } f
 export default {
   setup() {
     const userName = ref('');
+    const githubUsername = ref('');
     const message = ref('');
+    const gender = ref('man');
     const warning = ref(false);
     const success = ref(false);
     const messages = ref([]);
-    const defaultAvatar = '/src/assets/img/me/manavatar.jpg';
     const isCommentFormVisible = ref(false);
 
     const toggleCommentForm = () => {
@@ -77,12 +86,16 @@ export default {
       }
       await addDoc(collection(db, 'messages'), {
         name: userName.value,
+        githubUsername: githubUsername.value || '',
+        gender: gender.value,
         time: serverTimestamp(),
         message: message.value,
-        avatar: defaultAvatar // Set the avatar to the default image
+        verified: 0,
       });
       message.value = '';
       userName.value = '';
+      githubUsername.value = '';
+      gender.value = 'man';
       success.value = true;
       setTimeout(() => (success.value = false), 2000);
     };
@@ -99,15 +112,22 @@ export default {
       return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
     };
 
+    const formatMessage = (message) => {
+      // Regex to identify URLs and replace them with HTML <a> tags
+      return message.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" class="highlight-user-link" target="_blank">$1</a>');
+    };
+
     return {
       userName,
+      githubUsername,
       message,
+      gender,
       warning,
       success,
       postMessage,
       messages,
       formatDate,
-      defaultAvatar,
+      formatMessage,
       isCommentFormVisible,
       toggleCommentForm,
       hideCommentForm,
@@ -180,6 +200,23 @@ p {
 
 .comment-form {
   margin-bottom: 2rem;
+}
+
+select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  padding-right: 30px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--color-background);
+  color: var(--text);
+}
+
+select:focus {
+  border-color: var(--text);
 }
 
 .form-input,
@@ -260,7 +297,14 @@ p {
 .comment-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
+}
+
+.comment-timestamp {
+  font-size: 0.875rem;
+  color: var(--grey);
+  margin-left: auto; /* Pushes the timestamp to the far right */
 }
 
 .avatar {
@@ -278,16 +322,48 @@ p {
 
 .comment-author {
   font-weight: bold;
-  color: var(--color-heading);
+  color: var(--text);
+  display: flex;
+  align-items: center;
 }
 
-.comment-timestamp {
+.comment-author img {
+  margin-left: 0.2rem;
+}
+
+.github-username {
   font-size: 0.875rem;
   color: var(--grey);
+  margin-top: -0.2rem;
 }
 
 .comment-body {
   white-space: pre-wrap;
   color: var(--color-text);
+}
+
+.highlight-user-link {
+  text-decoration: underline;
+  word-wrap: break-word;
+}
+
+.comment-body {
+  overflow-wrap: break-word;
+}
+
+.comment-body a {
+  display: inline;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .highlight-user-link {
+    font-size: 0.875rem;
+  }
+  
+  .comment-body {
+    padding: 0.5rem;
+  }
 }
 </style>
