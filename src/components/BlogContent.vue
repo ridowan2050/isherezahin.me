@@ -100,7 +100,7 @@ import blogImage3 from '../assets/img/blog/blog3.jpg';
 import writerImage3 from '../assets/img/me/profile-img.jpg';
 
 import blogImage4 from '../assets/img/blog/blog4.jpg';
-import writerImage4 from '../assets/img/me/manavatar.jpg';
+import writerImage4 from '../../public/manavatar.jpg';
 
 import blogImage5 from '../assets/img/blog/blog5.jpg';
 import writerImage5 from '../assets/img/me/profile-img.jpg';
