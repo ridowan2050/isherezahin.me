@@ -53,15 +53,86 @@
 </template>
 
 <script>
-import image18 from '../assets/BD-24/images/457090035_2667904140061487_1037408914244065018_n.jpg';
-import image19 from '../assets/BD-24/images/457212695_1174923047130265_6082460985402124078_n.jpg';
-import image20 from '../assets/BD-24/images/456962683_2667904166728151_4790298147037831703_n.jpg';
-import image21 from '../assets/BD-24/images/457326061_806735374956183_470323408847748992_n.jpg';
+import image1 from '../assets/BD-24/images/BDM (1).jpg';
+import image2 from '../assets/BD-24/images/BDM (2).jpg';
+import image3 from '../assets/BD-24/images/BDM (3).jpg';
+import image4 from '../assets/BD-24/images/BDM (4).jpg';
+import image5 from '../assets/BD-24/images/BDM (5).jpg';
+import image6 from '../assets/BD-24/images/BDM (6).jpg';
+import image7 from '../assets/BD-24/images/BDM (7).jpg';
+import image8 from '../assets/BD-24/images/BDM (8).jpg';
+import image9 from '../assets/BD-24/images/BDM (9).jpg';
+import image10 from '../assets/BD-24/images/BDM (10).jpg';
+import image11 from '../assets/BD-24/images/BDM (11).jpg';
+import image12 from '../assets/BD-24/images/BDM (12).jpg';
+import image13 from '../assets/BD-24/images/BDM (13).jpg';
+import image14 from '../assets/BD-24/images/BDM (14).jpg';
+import image15 from '../assets/BD-24/images/BDM (15).jpg';
+import image16 from '../assets/BD-24/images/BDM (16).jpg';
+import image17 from '../assets/BD-24/images/BDM (17).jpg';
+import image18 from '../assets/BD-24/images/BDM (18).jpg';
+import image19 from '../assets/BD-24/images/BDM (19).jpg';
+import image20 from '../assets/BD-24/images/BDM (20).jpg';
+import image21 from '../assets/BD-24/images/BDM (21).jpg';
+import image22 from '../assets/BD-24/images/BDM (22).jpg';
+import image23 from '../assets/BD-24/images/BDM (23).jpg';
+import image24 from '../assets/BD-24/images/BDM (24).jpg';
+import image25 from '../assets/BD-24/images/BDM (25).jpg';
+import image26 from '../assets/BD-24/images/BDM (26).jpg';
+import image27 from '../assets/BD-24/images/BDM (27).jpg';
+
+import image28 from '../assets/BD-24/images/BDM (1).jpeg';
+import image29 from '../assets/BD-24/images/BDM (1).webp';
+import image30 from '../assets/BD-24/images/BDM (2).webp';
 
 
 
-import video1 from '../assets/BD-24/videos/Abu Sayed.mp4';
-import video20 from '../assets/BD-24/videos/কাজল.mp4';
+
+
+
+import video1 from '../assets/BD-24/videos/BDM (1).mp4';
+import video2 from '../assets/BD-24/videos/BDM (2).mp4';
+import video3 from '../assets/BD-24/videos/BDM (3).mp4';
+import video4 from '../assets/BD-24/videos/BDM (4).mp4';
+import video5 from '../assets/BD-24/videos/BDM (5).mp4';
+import video6 from '../assets/BD-24/videos/BDM (6).mp4';
+import video7 from '../assets/BD-24/videos/BDM (7).mp4';
+import video8 from '../assets/BD-24/videos/BDM (8).mp4';
+import video9 from '../assets/BD-24/videos/BDM (9).mp4';
+import video10 from '../assets/BD-24/videos/BDM (10).mp4';
+import video11 from '../assets/BD-24/videos/BDM (11).mp4';
+import video12 from '../assets/BD-24/videos/BDM (12).mp4';
+import video13 from '../assets/BD-24/videos/BDM (13).mp4';
+import video14 from '../assets/BD-24/videos/BDM (14).mp4';
+import video15 from '../assets/BD-24/videos/BDM (15).mp4';
+import video16 from '../assets/BD-24/videos/BDM (16).mp4';
+import video17 from '../assets/BD-24/videos/BDM (17).mp4';
+import video18 from '../assets/BD-24/videos/BDM (18).mp4';
+import video19 from '../assets/BD-24/videos/BDM (19).mp4';
+import video20 from '../assets/BD-24/videos/BDM (20).mp4';
+import video21 from '../assets/BD-24/videos/BDM (21).mp4';
+import video22 from '../assets/BD-24/videos/BDM (22).mp4';
+import video23 from '../assets/BD-24/videos/BDM (23).mp4';
+import video24 from '../assets/BD-24/videos/BDM (24).mp4';
+import video25 from '../assets/BD-24/videos/BDM (25).mp4';
+import video26 from '../assets/BD-24/videos/BDM (26).mp4';
+import video27 from '../assets/BD-24/videos/BDM (27).mp4';
+import video28 from '../assets/BD-24/videos/BDM (28).mp4';
+import video29 from '../assets/BD-24/videos/BDM (29).mp4';
+import video30 from '../assets/BD-24/videos/BDM (30).mp4';
+import video31 from '../assets/BD-24/videos/BDM (31).mp4';
+import video32 from '../assets/BD-24/videos/BDM (32).mp4';
+import video33 from '../assets/BD-24/videos/BDM (33).mp4';
+import video34 from '../assets/BD-24/videos/BDM (34).mp4';
+import video35 from '../assets/BD-24/videos/BDM (35).mp4';
+import video36 from '../assets/BD-24/videos/BDM (36).mp4';
+import video37 from '../assets/BD-24/videos/BDM (37).mp4';
+import video38 from '../assets/BD-24/videos/BDM (38).mp4';
+import video39 from '../assets/BD-24/videos/BDM (39).mp4';
+import video40 from '../assets/BD-24/videos/BDM (40).mp4';
+import video41 from '../assets/BD-24/videos/BDM (41).mp4';
+import video42 from '../assets/BD-24/videos/BDM (42).mp4';
+import video100 from '../assets/BD-24/videos/BDM (100).mp4';
 
 export default {
   data() {
@@ -70,15 +141,79 @@ export default {
       tagSearchQuery: '',
       selectedTags: [],
       items: [
-        { type: "video", src: video1, alt: 'Movement Video 4', tags: ['abusayed','1stsahid'] },
-        { type: "image", src: image20, alt: 'Movement Image 3', tags: ['student', 'sohan', 'july19', 'rumpur', 'spinalcord',] },
-        { type: "image", src: image18, alt: 'Movement Image 1', tags: ['student', 'sohan', 'july19', 'rumpur', 'spinalcord',] },
-        { type: "image", src: image21, alt: 'Movement Image 2', tags: ['student','fayaz','remand'] },
-        { type: "image", src: image19, alt: 'Movement Image 2', tags: ['student','fayaz','remand'] },
-        { type: "video", src: video20, alt: 'Movement Video 4', tags: ['kajol'] },
-
-
-        // Add more items with tags here
+        { type: 'image', src: image1, alt: 'Movement Image 1', tags: ['image'] },
+        { type: 'video', src: video1, alt: 'Movement Video 1', tags: ['Video'] },
+        { type: 'image', src: image2, alt: 'Movement Image 2', tags: ['image'] },
+        { type: 'video', src: video2, alt: 'Movement Video 2', tags: ['Video'] },
+        { type: 'image', src: image3, alt: 'Movement Image 3', tags: ['image'] },
+        { type: 'video', src: video3, alt: 'Movement Video 3', tags: ['Video'] },
+        { type: 'image', src: image4, alt: 'Movement Image 4', tags: ['image'] },
+        { type: 'video', src: video4, alt: 'Movement Video 4', tags: ['Video'] },
+        { type: 'image', src: image5, alt: 'Movement Image 5', tags: ['image'] },
+        { type: 'video', src: video5, alt: 'Movement Video 5', tags: ['Video'] },
+        { type: 'image', src: image6, alt: 'Movement Image 6', tags: ['image'] },
+        { type: 'video', src: video6, alt: 'Movement Video 6', tags: ['Video'] },
+        { type: 'image', src: image7, alt: 'Movement Image 7', tags: ['image'] },
+        { type: 'video', src: video7, alt: 'Movement Video 7', tags: ['Video'] },
+        { type: 'image', src: image8, alt: 'Movement Image 8', tags: ['image'] },
+        { type: 'video', src: video8, alt: 'Movement Video 8', tags: ['Video'] },
+        { type: 'image', src: image9, alt: 'Movement Image 9', tags: ['image'] },
+        { type: 'video', src: video9, alt: 'Movement Video 9', tags: ['Video'] },
+        { type: 'image', src: image10, alt: 'Movement Image 10', tags: ['image'] },
+        { type: 'video', src: video10, alt: 'Movement Video 10', tags: ['Video'] },
+        { type: 'image', src: image11, alt: 'Movement Image 11', tags: ['image'] },
+        { type: 'video', src: video11, alt: 'Movement Video 11', tags: ['Video'] },
+        { type: 'image', src: image12, alt: 'Movement Image 12', tags: ['image'] },
+        { type: 'video', src: video12, alt: 'Movement Video 12', tags: ['Video'] },
+        { type: 'image', src: image13, alt: 'Movement Image 13', tags: ['image'] },
+        { type: 'video', src: video13, alt: 'Movement Video 13', tags: ['Video'] },
+        { type: 'image', src: image14, alt: 'Movement Image 14', tags: ['image'] },
+        { type: 'video', src: video14, alt: 'Movement Video 14', tags: ['Video'] },
+        { type: 'image', src: image15, alt: 'Movement Image 15', tags: ['image'] },
+        { type: 'video', src: video15, alt: 'Movement Video 15', tags: ['Video'] },
+        { type: 'image', src: image16, alt: 'Movement Image 16', tags: ['image'] },
+        { type: 'video', src: video16, alt: 'Movement Video 16', tags: ['Video'] },
+        { type: 'image', src: image17, alt: 'Movement Image 17', tags: ['image'] },
+        { type: 'video', src: video17, alt: 'Movement Video 17', tags: ['Video'] },
+        { type: 'image', src: image18, alt: 'Movement Image 18', tags: ['image'] },
+        { type: 'video', src: video18, alt: 'Movement Video 18', tags: ['Video'] },
+        { type: 'image', src: image19, alt: 'Movement Image 19', tags: ['image'] },
+        { type: 'video', src: video19, alt: 'Movement Video 19', tags: ['Video'] },
+        { type: 'image', src: image20, alt: 'Movement Image 20', tags: ['image'] },
+        { type: 'video', src: video20, alt: 'Movement Video 20', tags: ['Video'] },
+        { type: 'image', src: image21, alt: 'Movement Image 21', tags: ['image'] },
+        { type: 'video', src: video21, alt: 'Movement Video 21', tags: ['Video'] },
+        { type: 'image', src: image22, alt: 'Movement Image 22', tags: ['image'] },
+        { type: 'video', src: video22, alt: 'Movement Video 22', tags: ['Video'] },
+        { type: 'image', src: image23, alt: 'Movement Image 23', tags: ['image'] },
+        { type: 'video', src: video23, alt: 'Movement Video 23', tags: ['Video'] },
+        { type: 'image', src: image24, alt: 'Movement Image 24', tags: ['image'] },
+        { type: 'video', src: video24, alt: 'Movement Video 24', tags: ['Video'] },
+        { type: 'image', src: image25, alt: 'Movement Image 25', tags: ['image'] },
+        { type: 'video', src: video25, alt: 'Movement Video 25', tags: ['Video'] },
+        { type: 'image', src: image26, alt: 'Movement Image 26', tags: ['image'] },
+        { type: 'video', src: video26, alt: 'Movement Video 26', tags: ['Video'] },
+        { type: 'image', src: image27, alt: 'Movement Image 27', tags: ['image'] },
+        { type: 'video', src: video27, alt: 'Movement Video 27', tags: ['Video'] },
+        { type: 'image', src: image28, alt: 'Movement Image 28', tags: ['image'] },
+        { type: 'video', src: video28, alt: 'Movement Video 28', tags: ['Video'] },
+        { type: 'image', src: image29, alt: 'Movement Image 29', tags: ['image'] },
+        { type: 'video', src: video29, alt: 'Movement Video 29', tags: ['Video'] },
+        { type: 'image', src: image30, alt: 'Movement Image 30', tags: ['image'] },
+        { type: 'video', src: video30, alt: 'Movement Video 30', tags: ['Video'] },
+        { type: 'video', src: video31, alt: 'Movement Video 31', tags: ['Video'] },
+        { type: 'video', src: video32, alt: 'Movement Video 32', tags: ['Video'] },
+        { type: 'video', src: video33, alt: 'Movement Video 33', tags: ['Video'] },
+        { type: 'video', src: video34, alt: 'Movement Video 34', tags: ['Video'] },
+        { type: 'video', src: video35, alt: 'Movement Video 35', tags: ['Video'] },
+        { type: 'video', src: video36, alt: 'Movement Video 36', tags: ['Video'] },
+        { type: 'video', src: video37, alt: 'Movement Video 37', tags: ['Video'] },
+        { type: 'video', src: video38, alt: 'Movement Video 38', tags: ['Video'] },
+        { type: 'video', src: video39, alt: 'Movement Video 39', tags: ['Video'] },
+        { type: 'video', src: video40, alt: 'Movement Video 40', tags: ['Video'] },
+        { type: 'video', src: video41, alt: 'Movement Video 41', tags: ['Video'] },
+        { type: 'video', src: video42, alt: 'Movement Video 42', tags: ['Video'] },
+        { type: 'video', src: video100, alt: 'Movement Video 100', tags: ['Video'] }
       ],
       observer: null
     };
