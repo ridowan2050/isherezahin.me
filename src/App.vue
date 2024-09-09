@@ -107,7 +107,7 @@ import '../public/assets/vendor/swiper/swiper-bundle.min.css';
 import '../public/assets/vendor/glightbox/css/glightbox.min.css';
 import '../public/assets/vendor/aos/aos.css';
 import '../public/assets/css/main.css'
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../public/assets/vendor/swiper/swiper-bundle.min.js';
@@ -177,14 +177,14 @@ import '../public/assets/js/main.js';
 // });
 </script>
 
-<script>
+<!-- <script>
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const shape = document.querySelector('.shape-3');
         shape.style.opacity = '1';
       }, 1500); // 1.5 seconds delay
     });
-</script>
+</script> -->
 
 <style scoped>
 .active-link {
