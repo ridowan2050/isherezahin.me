@@ -54,6 +54,13 @@
           <span class="comment-timestamp">{{ formatDate(message.time) }}</span>
         </div>
         <div class="comment-body" v-html="formatComment(message.message)"></div>
+
+        <!-- Show delete button if the logged-in user is the owner of the comment -->
+        <div class="comment-actions" v-if="user && user.email === message.email">
+          <button @click="deleteComment(message.id)" class="btn btn-danger btn-sm delete-button">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
       </div>
     </div>
     <p v-else>No comments yet. Be the first to leave one!</p>
@@ -61,7 +68,7 @@
 </template>
 
 <script>
-import { auth, provider, signInWithPopup, signOut, db, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from '../firebase'; // Make sure Firebase is properly imported.
+import { auth, provider, signInWithPopup, signOut, db, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, doc, deleteDoc } from '../firebase'; // Import necessary Firebase methods
 
 export default {
   data() {
@@ -105,6 +112,7 @@ export default {
       const newMessage = {
         message: this.message,
         displayname: this.user.displayName || this.user.email,
+        email: this.user.email,
         avatar: this.user.photoURL || '/public/manavatar.jpg',
         verified: this.user.emailVerified,
         time: serverTimestamp(),
@@ -117,6 +125,14 @@ export default {
         setTimeout(() => (this.success = false), 2000);
       } catch (error) {
         console.error('Error posting message:', error);
+      }
+    },
+    async deleteComment(commentId) {
+      try {
+        await deleteDoc(doc(db, 'messages', commentId));
+        console.log('Comment successfully deleted');
+      } catch (error) {
+        console.error('Error deleting comment:', error);
       }
     },
     formatDate(timestamp) {
@@ -147,8 +163,9 @@ export default {
             message: data.message,
             displayname: data.displayname,
             avatar: data.avatar,
-            time: data.time, 
-            verified: data.verified
+            time: data.time,
+            verified: data.verified,
+            email: data.email, // Include email to check ownership
           };
         });
       });
@@ -440,5 +457,26 @@ select:focus {
 .verified-container:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+}
+.comment-actions {
+  margin-top: 10px;
+}
+
+.delete-button {
+  border: none;
+  border-radius: 6px;
+  background: var(--rad);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-button:hover {
+  background: var(--border);
+  color: var(--rad);
+}
+
+.bi-trash {
+  font-size: 1.2rem;
 }
 </style>
