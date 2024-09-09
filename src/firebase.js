@@ -1,5 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } from 'firebase/firestore';
+// firebase.js
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithPopup, GithubAuthProvider, signOut } from "firebase/auth";
+import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, doc, deleteDoc } from "firebase/firestore";
 
 // Firebase config object
 const firebaseConfig = {
@@ -12,7 +14,10 @@ const firebaseConfig = {
   measurementId: "G-TWEC3FXVF6"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+const provider = new GithubAuthProvider();
 
-export { db, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot };
+export { db, auth, provider, signInWithPopup, signOut, GithubAuthProvider, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, doc, deleteDoc };
