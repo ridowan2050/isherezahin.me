@@ -369,7 +369,47 @@ select:focus {
 .comment-timestamp {
   font-size: 0.875rem;
   color: var(--grey);
-  margin-left: auto; /* Pushes the timestamp to the far right */
+  margin-left: auto;
+}
+
+
+@media (max-width: 768px) {
+  .comment-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .comment-timestamp {
+    font-size: 0.75rem;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  .container {
+    margin: auto;
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .comment-header {
+    padding: 0 1rem;
+  }
+  .comment-timestamp {
+    font-size: 0.75rem;
+    margin-top: 0.15rem;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .comment-info {
+    font-size: 0.875rem;
+  }
+  .verified-container {
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
 }
 
 .avatar {
