@@ -41,35 +41,35 @@
             <div class="tech-stack footer-nav">
                 <div class="tech">
                     <a href="https://github.com/IsHereZahin/isherezahin.me" target="_blank" exact class="link-a">Source Code</a>
-                    <div class="tooltip"><span class="tech-name">Source Code:</span> This website is open source</div>
+                    <div class="tooltip"><span class="tech-name">Source Code:</span> Access the open-source code for this website.</div>
                 </div>
                 <div class="tech">
                     <a href="https://github.com/IsHereZahin/isherezahin.me" target="_blank" exact class="link-a">Contribute</a>
-                    <div class="tooltip"><span class="tech-name">Contribute:</span> Help improve this website by contributing</div>
+                    <div class="tooltip"><span class="tech-name">Contribute:</span> Contribute to enhancing this website's features.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/about" exact class="link-a">About</RouterLink>
-                    <div class="tooltip"><span class="tech-name">About:</span> Learn more about me</div>
+                    <div class="tooltip"><span class="tech-name">About:</span> Learn more about my background and experience.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/design" exact class="link-a">Design</RouterLink>
-                    <div class="tooltip"><span class="tech-name">Design:</span> Explore the design process</div>
+                    <div class="tooltip"><span class="tech-name">Design:</span> Explore the design process behind this portfolio website.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/guestbook" exact class="link-a">Guestbook</RouterLink>
-                    <div class="tooltip"><span class="tech-name">Guestbook:</span> Coming soon</div>
+                    <div class="tooltip"><span class="tech-name">Guestbook:</span> I'd love to hear from you! Share your thoughts and feedback on my guestbook page.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/project" exact class="link-a">Projects</RouterLink>
-                    <div class="tooltip"><span class="tech-name">Projects:</span> View my projects</div>
+                    <div class="tooltip"><span class="tech-name">Projects:</span> View and explore my professional projects.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/bd-anti-discrimination-student-movement" exact class="link-a">BD-24</RouterLink>
-                    <div class="tooltip"><span class="tech-name">BD-24:</span>The Bangladesh Anti-Discrimination Student Movement is a student-led initiative advocating for equality and fighting against discrimination in educational institutions and society.</div>
+                    <div class="tooltip"><span class="tech-name">BD-24:</span> Learn about the Bangladesh Anti-Discrimination Student Movement and its advocacy for equality and anti-discrimination.</div>
                 </div>
                 <div class="tech">
                     <RouterLink to="/uses" exact class="link-a">Uses</RouterLink>
-                    <div class="tooltip"><span class="tech-name">Uses:</span> See the tools I use</div>
+                    <div class="tooltip"><span class="tech-name">Uses:</span> Discover the tools and technologies I use in my work.</div>
                 </div>
             </div>
 
