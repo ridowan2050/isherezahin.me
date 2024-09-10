@@ -164,41 +164,43 @@ export default {
 .vue-js,
 .laravel,
 .ui-ux {
-    opacity: 0.4;
+    opacity: 1;
     font-size: 0.75rem;
     border-radius: 1.5rem;
     position: absolute;
     cursor: pointer;
     color: var(--white);
+    background-color: rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
+    transform: scale(1.1);
 }
 
-.selenium:hover {
-    opacity: 1;
+.selenium {
     color: #00bb00;
     background-color: rgba(0, 187, 0, 0.1);
-    transform: scale(1.1);
 }
 
-.vue-js:hover {
-    opacity: 1;
+.vue-js {
     color: #42b883;
     background-color: rgba(66, 184, 131, 0.1);
-    transform: scale(1.1);
 }
 
-.laravel:hover {
-    opacity: 1;
+.laravel {
     color: #ff2d20;
     background-color: rgba(255, 45, 32, 0.1);
-    transform: scale(1.1);
 }
 
-.ui-ux:hover {
-    opacity: 1;
+.ui-ux {
     color: #1d4ed8;
     background-color: rgba(29, 78, 216, 0.1);
-    transform: scale(1.1);
+}
+.selenium:hover,
+.vue-js:hover,
+.laravel:hover,
+.ui-ux:hover {
+    transform: scale(1.3);
+    opacity: 0.9;
+    background-color: rgba(179, 182, 181, 0.2);
 }
 
 .left-2 {
@@ -269,12 +271,12 @@ export default {
 }
 
 .from-black {
-    --tw-gradient-from: #000000;
+    --tw-gradient-from: var(--color-bg);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
 }
 
 .to-black\/70 {
-    --tw-gradient-to: rgba(0, 0, 0, 0.7);
+    --tw-gradient-to: var(--color-bg);
 }
 
 .bg-clip-text {
@@ -296,24 +298,24 @@ export default {
 }
 
 .dark\:from-zinc-100 {
-    --tw-gradient-from: #f5f5f5;
+    --tw-gradient-from: var(--text);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(245, 245, 245, 0));
 }
 
 .dark\:to-zinc-400 {
-    --tw-gradient-to: #a3a3a3;
+    --tw-gradient-to: var(--grey);
 }
 
 .text-zinc-800 {
-    color: #1f2937;
+    color: var(--blackly);
 }
 
 .dark\:text-zinc-300 {
-    color: #d1d5db;
+    color: var(--grey);
 }
 
 .text-muted-foreground {
-    color: #6b7280;
+    color: var(--blackly);
 }
 
 .my-8 {
