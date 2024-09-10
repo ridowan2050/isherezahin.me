@@ -56,7 +56,7 @@
         <div class="comment-body" v-html="formatComment(message.message)"></div>
 
         <!-- Show delete button if the logged-in user is the owner of the comment -->
-        <div class="comment-actions" v-if="user && user.email === message.email">
+        <div class="comment-actions" v-if="user && (user.email === message.email || isAdmin(user.email) || isModerator(user.email))">
           <button @click="deleteComment(message.id)" class="btn btn-danger btn-sm delete-button">
             <i class="bi bi-trash"></i>
           </button>
@@ -169,6 +169,12 @@ export default {
           };
         });
       });
+    },
+    isAdmin(email) {
+      return email === "abuzahinmohammadnowsin@gmail.com";
+    },
+    isModerator(email) {
+      return email === "isherezahin@gmail.com";
     }
   },
   mounted() {
