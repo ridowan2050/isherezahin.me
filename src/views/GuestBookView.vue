@@ -6,8 +6,8 @@
         <div class="row page-head gap-2">
           <h1 class="white-head fw-bold text-green-800">Guestbook</h1>
           <p>Welcome to my Guestbook! You can tell me anything here!</p>
-          <PostMessage />
         </div>
+          <PostMessage />
       </div>
     </section>
   </main>
