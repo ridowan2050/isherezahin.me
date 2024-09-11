@@ -18,24 +18,26 @@
             <div class="col-2"><span class="span">"</span></div>
             <div class="col-10">
               <p>
-                As a dedicated <span class="information-color">Software Engineer
-                <span class="tooltip"><span class="tooltip-text">Software Engineer:</span> A professional specializing in the development, testing, and maintenance of software applications.</span>
-                </span> from <span class="information-color">Bangladesh
-                  <span class="tooltip"><span class="tooltip-text">Bangladesh:</span> A country in South Asia known for its rich cultural heritage and natural beauty.</span>
-                </span>, I am committed to delivering high-quality solutions and leveraging my expertise in <span class="information-color">Laravel
+                As a dedicated <span class="information-color">QA Professional
+                  <span class="tooltip"><span class="tooltip-text">QA Professional:</span> A specialist in ensuring the quality of software through both functional and automated testing.</span>
+                </span> with expertise in <span class="information-color">Functional & Automated Testing
+                  <span class="tooltip"><span class="tooltip-text">Functional & Automated Testing:</span> Techniques used to ensure software performs correctly and meets requirements through manual and automated tests.</span>
+                </span>, and familiar with <span class="information-color">Laravel
                   <span class="tooltip"><span class="tooltip-text">Laravel:</span> A PHP framework for web artisans.</span>
                 </span>, <span class="information-color">Vue.js
                   <span class="tooltip"><span class="tooltip-text">Vue.js:</span> A progressive framework for building user interfaces.</span>
-                </span>, <span class="information-color">Pest
-                  <span class="tooltip"><span class="tooltip-text">Pest:</span> A testing framework with a focus on simplicity.</span>
                 </span>, <span class="information-color">Selenium
                   <span class="tooltip"><span class="tooltip-text">Selenium:</span> A tool for automating web browsers.</span>
                 </span>, <span class="information-color">Puppeteer
                   <span class="tooltip"><span class="tooltip-text">Puppeteer:</span> A Node.js library for controlling headless Chrome or Chromium browsers.</span>
-                </span>, and database management to create impactful software applications.
+                </span>, <span class="information-color">Pest
+                  <span class="tooltip"><span class="tooltip-text">Pest:</span> A testing framework with a focus on simplicity.</span>
+                </span>, and <span class="information-color">Figma
+                  <span class="tooltip"><span class="tooltip-text">Figma:</span> A web-based design tool for creating user interfaces and prototypes.</span>
+                </span>, I am committed to delivering high-quality solutions and leveraging my skills to create impactful software applications.
               </p>
               <p>
-                Don't forget to visit my  <span class="information-color"><RouterLink to="/guestbook" exact-active-class="active-link" style="color: var(--theme);">GuestBook</RouterLink></span>!
+                Don't forget to visit my <span class="information-color"><RouterLink to="/guestbook" exact-active-class="active-link" style="color: var(--theme);">GuestBook</RouterLink></span>!
               </p>
             </div>
           </div>

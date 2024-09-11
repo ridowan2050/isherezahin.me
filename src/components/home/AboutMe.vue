@@ -6,7 +6,7 @@
         <div class="location">
           <div class="row">
             <div class="location-title">
-              <p><i class="bi bi-geo-alt-fill"></i> Bangladesh, Chittagong</p>
+              <p><i class="bi bi-geo-alt-fill"></i> Bangladesh, Chittagong (UTC +06:00)</p>
             </div>
           </div>
           <div class="row">
