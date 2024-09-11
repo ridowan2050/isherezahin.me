@@ -8,6 +8,8 @@
       </div>
       <img src="../assets/img/home/about-shape-3.svg" loading="lazy" alt="" class="shape shape-3">
 
+      <h3 class="titlebar white-head text-decoration-none theme-color">WHO AM I</h3>
+
       <div class="container">
         <div class="row">
           <!-- Image Column -->
@@ -17,7 +19,6 @@
 
           <!-- Text Column -->
           <div class="col-md-8 order-2 order-md-1">
-            <h3 class="titlebar white-head text-decoration-none theme-color">WHO AM I</h3>
             <div class="w-100">
               <p class="text-gray-400">I’m an enthusiastic QA professional with a solid foundation in functional and automated testing. My expertise extends to working with tools and technologies such as <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://laravel.org/">Laravel</a>, <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://vuejs.org/">Vue.js</a>, <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.selenium.dev/">Selenium</a>, <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://pptr.dev/">Puppeteer</a>, <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://pestphp.com/">Pest</a>, and <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.figma.com/">Figma</a>.</p>
               <p class="text-gray-400">My journey in software began at the age of 15 with a keen interest in programming, which led me to pursue formal education in computer science starting in 2019. Through extensive self-learning on platforms like YouTube, particularly on channels like <a class="tech-color" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@edurekaIN">edureka!</a>, I have developed a strong proficiency in various programming languages and technologies.</p>
@@ -128,6 +129,7 @@ a, h4 {
   cursor: pointer;
   box-shadow: 0 4px 8px var(--theme);
   border-radius: 0.3rem;
+  margin-bottom: 2rem;
 }
 
 .img-fluid:hover {
