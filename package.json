@@ -20,7 +20,7 @@
     "cobe": "^0.6.3",
     "firebase": "^10.13.1",
     "pinia": "^2.1.7",
-    "sweetalert2": "^11.6.13",
+    "sweetalert2": "^11.14.0",
     "vue": "^3.4.26",
     "vue-router": "^4.3.2"
   },

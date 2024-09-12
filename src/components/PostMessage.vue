@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 import { auth, provider, signInWithPopup, signOut, db, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, doc, deleteDoc } from '../firebase'; // Import necessary Firebase methods
 
 export default {
@@ -129,9 +130,45 @@ export default {
     },
     async deleteComment(commentId) {
       try {
-        await deleteDoc(doc(db, 'messages', commentId));
-        console.log('Comment successfully deleted');
+        // Display the SweetAlert confirmation dialog with dark theme
+        const result = await Swal.fire({
+          title: 'Are you sure?',
+          text: 'You won’t be able to undo this!',
+          icon: 'warning',
+          iconColor: '#f8bb86', // Customize the icon color for dark theme
+          background: '#333', // Dark background
+          color: '#fff', // Text color
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: 'Yes, delete it!',
+          cancelButtonText: 'Cancel',
+        });
+
+        // If the user confirms, proceed with the deletion
+        if (result.isConfirmed) {
+          await deleteDoc(doc(db, 'messages', commentId));
+          
+          // Show success message with dark theme
+          Swal.fire({
+            title: 'Deleted!',
+            text: 'The comment has been deleted.',
+            icon: 'success',
+            background: '#333',
+            color: '#fff',
+            iconColor: '#a5dc86', // Success icon color
+          });
+        }
       } catch (error) {
+        // Show error message with dark theme
+        Swal.fire({
+          title: 'Error',
+          text: 'There was an error deleting the comment.',
+          icon: 'error',
+          background: '#333',
+          color: '#fff',
+          iconColor: '#f27474', // Error icon color
+        });
         console.error('Error deleting comment:', error);
       }
     },
